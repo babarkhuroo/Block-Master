@@ -11,7 +11,6 @@ const Navbar = ({ search_url }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const full_url = search_url + query
     }
 
     return (
