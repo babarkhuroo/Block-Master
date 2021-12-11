@@ -28,7 +28,7 @@ const Slider = ({ url }) => {
         return () => clearInterval(slideFunc)
     }, [index])
 
-    return (
+    return (<>
         <div className="slider-container">
             {sliders.map((slider, idx) => {
                 const { backdrop_path, title } = slider
@@ -36,11 +36,11 @@ const Slider = ({ url }) => {
                 if (idx === index) {
                     position = 'activeSlide'
                 }
-                if (idx === index - 1) {
+                if (idx === index - 1 || (index === 0 && idx === sliders.length - 1)) {
                     position = 'prevSlide'
                 }
                 return <>
-                    <img className={position} src={img_url + backdrop_path} alt={title} />
+                    <img className={`banner ${position}`} src={img_url + backdrop_path} alt={title} />
                     <div className="btn-container">
                         <div className="now">
                             <img src={play} alt="" />
@@ -54,6 +54,21 @@ const Slider = ({ url }) => {
                 </>
             })}
         </div>
+
+        <div className="ind-container">
+            {
+                sliders.map((slider, idx) => {
+                    let sClass = ''
+                    if (index === idx) {
+                        sClass = 'active'
+                    }
+                    return (
+                        <div className={`indicator ${sClass}`}></div>
+                    )
+                })
+            }
+        </div>
+    </>
     )
 }
 
