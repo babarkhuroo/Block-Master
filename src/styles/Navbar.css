@@ -11,10 +11,6 @@
   text-decoration: none;
 }
 
-.nav a:hover {
-  color: var(--primary);
-}
-
 .logo {
   position: relative;
 }
@@ -43,6 +39,18 @@
 .sub-menu {
   display: flex;
   margin: 0 20px;
+}
+
+.sub-menu a.active-link {
+  padding-bottom: 5px;
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+}
+
+.sub-menu a:hover {
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 5px;
 }
 
 .sub-menu h3 {
