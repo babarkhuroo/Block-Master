@@ -23,4 +23,4 @@ This project is a replacement for IMDb website. Yes, you heard it right. This is
 
 ## Live Site
 
-- _coming soon..._
+- [Block Master Vercel](https://block-master-sheikhcamel.vercel.app)
