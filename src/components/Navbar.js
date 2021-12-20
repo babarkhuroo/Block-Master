@@ -1,20 +1,14 @@
-import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { useGlobalContext } from './context'
 import '../styles/Navbar.css'
 import logo from '../assets/imgs/logo-blockBuster.svg'
 import search_icon from '../assets/imgs/search-icon.svg'
-import { useFetch } from '../useFetch'
-import Main from './Main'
-import Movie from './Movie'
 
-const Navbar = ({ search_url }) => {
-  const [query, setQuery] = useState('')
-  const [searchUrl, setSearchUrl] = useState('')
+const Navbar = () => {
+  const { query, setQuery } = useGlobalContext()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    let searchUrl = search_url + query
-    setQuery('')
   }
 
   return (

@@ -11,12 +11,12 @@ const NOW_PLAYING = `https://api.themoviedb.org/3/movie/now_playing?${apiKey}&la
 const UPCOMING = `https://api.themoviedb.org/3/movie/upcoming?${apiKey}&language=en-US&page=1`
 const TOP_RATED = `https://api.themoviedb.org/3/movie/top_rated?${apiKey}&language=en-US&page=1`
 const TRENDING = `https://api.themoviedb.org/3/trending/movie/day?${apiKey}`
-const SEARCH = `https://api.themoviedb.org/3/search/movie?${apiKey}&language=en-US&page=1&include_adult=false&query=`
+export const SEARCH = `https://api.themoviedb.org/3/search/movie?${apiKey}&language=en-US&page=1&include_adult=false&query=`
 
 function App() {
   return (
     <Router>
-      <Navbar search_url={SEARCH} />
+      <Navbar />
       <Slider url={TRENDING} />
       <Routes>
         <Route path='/' element={<Main url={POPULAR} />} />
