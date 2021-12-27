@@ -46,7 +46,7 @@ const Navbar = () => {
       </div>
       <form className='form' onSubmit={handleSubmit}>
         <input
-          type='text'
+          type='search'
           name='search'
           id='search'
           value={query}

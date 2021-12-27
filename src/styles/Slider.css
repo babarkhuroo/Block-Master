@@ -1,5 +1,5 @@
 .slider-container {
-  height: 400px;
+  padding-bottom: 30%;
   margin: 0 10px 50px;
   border-radius: 10px;
   position: relative;
@@ -22,12 +22,16 @@
   position: absolute;
   left: 0px;
   bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4em;
+  margin: 2em;
 }
 
-.btn-container div {
-  padding: 15px 25px;
-  margin: 30px;
-  display: inline-block;
+.btn-container .now,
+.btn-container .later {
+  padding: 0.6em 1.5em;
   border: 1px solid var(--primary);
   cursor: pointer;
 }
@@ -41,7 +45,6 @@
 .btn-container .now img,
 .btn-container .later img {
   width: 11px;
-  vertical-align: middle;
   margin-right: 20px;
 }
 
@@ -56,7 +59,7 @@
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
-  vertical-align: middle;
+  line-height: 2em;
 }
 
 .banner.activeSlide {
@@ -74,6 +77,27 @@
   transform: translateX(-110%);
 }
 
+@media screen and (max-width: 768px) {
+  .slider-container {
+    padding-bottom: 50%;
+  }
+  .slider-container .btn-container {
+    gap: 2em;
+  }
+  .btn-container .now,
+  .btn-container .later {
+    padding: 0.3em 1em;
+  }
+  .btn-container .now img,
+  .btn-container .later img {
+    width: 8px;
+    margin-right: 10px;
+  }
+  .btn-container a {
+    font-size: 12px;
+  }
+}
+
 /* indicators */
 
 .ind-container {
@@ -89,11 +113,12 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  margin: 5px;
+  margin: 3px;
+  transition: all 0.4s ease;
 }
 
 .indicator.active {
   background-color: var(--white);
-  border-radius: 40%;
-  width: 10px;
+  border-radius: 500px;
+  width: 12px;
 }

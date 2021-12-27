@@ -1,21 +1,16 @@
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding: 30px 40px 40px;
+  gap: 3rem;
+  padding: 2rem;
 }
 
-.nav a {
-  font-family: 'Montserrat';
-  color: var(--white);
-  text-decoration: none;
-}
-
-.logo {
+.nav .logo {
   position: relative;
 }
 
-.logo .bg-title {
+.nav .logo .bg-title {
   position: absolute;
   left: 14px;
   right: 11px;
@@ -25,7 +20,7 @@
   transform: rotate(-10deg);
 }
 
-.logo h2 {
+.nav .logo h2 {
   font-size: 12px;
   font-family: 'Poppins';
   color: #ffa903;
@@ -36,67 +31,94 @@
   z-index: 5;
 }
 
-.sub-menu {
+.nav .sub-menu {
   display: flex;
-  margin: 0 20px;
-}
-
-.sub-menu a.active-link {
-  padding-bottom: 5px;
-  color: var(--primary);
-  border-bottom: 3px solid var(--primary);
-}
-
-.sub-menu a:hover {
-  color: var(--primary);
-  border-bottom: 3px solid var(--primary);
-  padding-bottom: 5px;
-}
-
-.sub-menu h3 {
-  padding: 0 20px;
-}
-
-.form {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 1.5rem;
 }
 
-.form input {
-  border: none;
+.nav .sub-menu a {
+  font-family: 'Montserrat';
+  color: var(--white);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.nav .sub-menu a:hover,
+.nav .sub-menu a.active-link {
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 5px;
+}
+
+.nav .form {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  width: 350px;
+}
+
+.nav .form input {
   font-family: 'Montserrat';
   font-size: 16px;
   padding: 10px;
-  height: 22px;
-  width: 350px;
+  height: 44px;
+  width: 100%;
+  min-width: 145px;
   border: 1px solid var(--primary);
   border-radius: 8px 0 0 8px;
 }
 
-.form input::placeholder {
+.nav .form input::placeholder {
   color: var(--grey);
 }
 
-.form input:focus {
+.nav .form input:focus {
   outline: none;
   color: var(--black);
 }
 
-.form .btn {
+.nav .form .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--primary);
-  width: 72px;
   height: 44px;
   border: none;
   border-radius: 0 4px 4px 0;
   padding: 10px 24px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.form .btn img {
+.nav .form .btn:hover {
+  background-color: rgba(254, 217, 65, 0.8);
+}
+
+.nav .form .btn img {
   height: 20px;
   width: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 0;
+    font-size: 14px;
+  }
+  .nav .form {
+    margin: 0;
+  }
+  .nav .form input,
+  .nav .form .btn {
+    height: 35px;
+  }
+  .nav .form .btn {
+    padding: 8px 18px;
+  }
+  .nav .form .btn img {
+    height: 18px;
+    width: 18px;
+  }
 }

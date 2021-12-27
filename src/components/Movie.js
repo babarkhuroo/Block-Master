@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/Movie.css'
 import Star from '../assets/imgs/star.svg'
 
-const img_url = 'https://image.tmdb.org/t/p/w500'
+const img_url = 'https://image.tmdb.org/t/p/w342'
 const def =
   'https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg'
 
