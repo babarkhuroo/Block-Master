@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFetch } from '../useFetch'
 import '../styles/Main.css'
 import Movie from './Movie'
@@ -7,18 +7,44 @@ import { useGlobalContext } from './context'
 import { SEARCH } from '../App'
 
 const Main = ({ url }) => {
-  const { query } = useGlobalContext()
-  const { movies, loading } = useFetch(query ? SEARCH + query : url)
+  const { query, setQuery } = useGlobalContext()
+  const [page, setPage] = useState(1)
+  const { movies, loading } = useFetch(
+    query ? SEARCH + query + `&page=${page}` : url + page
+  )
 
   if (loading) {
     return <Loading />
   }
+
+  function prevPage() {
+    if (page <= 1) {
+      setPage(1)
+    } else {
+      setPage((page) => page - 1)
+    }
+  }
+
+  function nextPage() {
+    setPage((page) => page + 1)
+  }
+
   return (
-    <section className='container'>
-      {movies.map((movie) => {
-        return <Movie key={movie.id} movie={movie} />
-      })}
-    </section>
+    <>
+      <section className='container'>
+        {movies.map((movie) => {
+          return <Movie key={movie.id} movie={movie} />
+        })}
+      </section>
+      <div className='btn-container'>
+        <button className='btn prev' onClick={prevPage}>
+          Prev
+        </button>
+        <button className='btn next' onClick={nextPage}>
+          Next
+        </button>
+      </div>
+    </>
   )
 }
 
