@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { useGlobalContext } from './context'
 import '../styles/Navbar.css'
@@ -6,9 +7,11 @@ import search_icon from '../assets/imgs/search-icon.svg'
 
 const Navbar = () => {
   const { query, setQuery } = useGlobalContext()
+  const queryRef = useRef(null)
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setQuery(queryRef.current.value)
   }
 
   return (
@@ -46,11 +49,10 @@ const Navbar = () => {
       </div>
       <form className='form' onSubmit={handleSubmit}>
         <input
+          ref={queryRef}
           type='search'
           name='search'
           id='search'
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
           placeholder='Search here...'
         />
         <button type='submit' className='btn'>
