@@ -6,7 +6,7 @@ import logo from '../assets/imgs/logo-blockBuster.svg'
 import search_icon from '../assets/imgs/search-icon.svg'
 
 const Navbar = () => {
-  const { query, setQuery } = useGlobalContext()
+  const { setQuery } = useGlobalContext()
   const queryRef = useRef(null)
 
   const handleSubmit = (e) => {
@@ -22,30 +22,24 @@ const Navbar = () => {
         <h2>Block Master</h2>
       </Link>
       <div className='sub-menu'>
-        <h3>
-          <NavLink
-            className={({ isActive }) => (isActive ? 'active-link' : null)}
-            to='/now_playing'
-          >
-            Now Playing
-          </NavLink>
-        </h3>
-        <h3>
-          <NavLink
-            className={({ isActive }) => (isActive ? 'active-link' : null)}
-            to='/upcoming'
-          >
-            Upcoming
-          </NavLink>
-        </h3>
-        <h3>
-          <NavLink
-            className={({ isActive }) => (isActive ? 'active-link' : null)}
-            to='/top_rated'
-          >
-            Top Rated
-          </NavLink>
-        </h3>
+        <NavLink
+          className={({ isActive }) => (isActive ? 'active-link' : null)}
+          to='/now_playing'
+        >
+          Now Playing
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? 'active-link' : null)}
+          to='/upcoming'
+        >
+          Upcoming
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? 'active-link' : null)}
+          to='/top_rated'
+        >
+          Top Rated
+        </NavLink>
       </div>
       <form className='form' onSubmit={handleSubmit}>
         <input

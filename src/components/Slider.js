@@ -15,7 +15,7 @@ const Slider = ({ url }) => {
   useEffect(() => {
     let slideFunc = setInterval(() => {
       setIndex(index + 1)
-    }, 5000)
+    }, 7000)
     if (index < 0) {
       setIndex(sliders.length - 1)
     }
@@ -23,6 +23,7 @@ const Slider = ({ url }) => {
       setIndex(0)
     }
     return () => clearInterval(slideFunc)
+    // eslint-disable-next-line
   }, [index])
 
   return (
@@ -41,7 +42,7 @@ const Slider = ({ url }) => {
             position = 'prevSlide'
           }
           return (
-            <>
+            <React.Fragment key={idx}>
               <img
                 className={`banner ${position}`}
                 src={img_url + backdrop_path}
@@ -50,25 +51,31 @@ const Slider = ({ url }) => {
               <div className='btn-container'>
                 <div className='now'>
                   <img src={play} alt='' />
-                  <a href='#'>Watch Now</a>
+                  <a href='/#'>Watch Now</a>
                 </div>
                 <div className='later'>
                   <img src={add} alt='' />
-                  <a href='#'>Watch Later</a>
+                  <a href='/#'>Watch Later</a>
                 </div>
               </div>
-            </>
+            </React.Fragment>
           )
         })}
       </div>
 
       <div className='ind-container'>
-        {sliders.map((slider, idx) => {
+        {sliders.map((_, idx) => {
           let sClass = ''
           if (index === idx) {
             sClass = 'active'
           }
-          return <div className={`indicator ${sClass}`}></div>
+          return (
+            <div
+              key={idx}
+              className={`indicator ${sClass}`}
+              onClick={() => setIndex(idx)}
+            ></div>
+          )
         })}
       </div>
     </>

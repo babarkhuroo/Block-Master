@@ -1,0 +1,22 @@
+.footer {
+  height: 50px;
+  width: max-content;
+  padding: 1rem;
+  margin: 0 auto;
+  font-family: 'Poppins';
+}
+
+.footer a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: rgba(254, 217, 65, 0.8);
+}
+
+p {
+  width: max-content;
+  margin: 5px auto;
+}

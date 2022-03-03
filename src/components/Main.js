@@ -7,7 +7,7 @@ import { useGlobalContext } from './context'
 import { SEARCH } from '../App'
 
 const Main = ({ url }) => {
-  const { query, setQuery } = useGlobalContext()
+  const { query } = useGlobalContext()
   const [page, setPage] = useState(1)
   const { movies, loading } = useFetch(
     query ? SEARCH + query + `&page=${page}` : url + page
@@ -37,7 +37,7 @@ const Main = ({ url }) => {
         })}
       </section>
       <div className='btn-container'>
-        <button className='btn prev' onClick={prevPage}>
+        <button className='btn prev' onClick={prevPage} disabled={page === 1}>
           Prev
         </button>
         <button className='btn next' onClick={nextPage}>

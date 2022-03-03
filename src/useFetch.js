@@ -18,6 +18,7 @@ export const useFetch = (url) => {
   }
   useEffect(() => {
     getMovies()
+    // eslint-disable-next-line
   }, [url])
   return { movies, loading }
 }
