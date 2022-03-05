@@ -24,43 +24,40 @@
   left: 0px;
   bottom: 0px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 4em;
+  gap: 1em;
   margin: 2em;
 }
 
-.btn-container .now,
-.btn-container .later {
-  padding: 0.6em 1.5em;
+.btn-container .slider-btn {
+  background-color: var(--primary);
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 1em 1.5em;
   border: 1px solid var(--primary);
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.btn-container .now,
-.btn-container .now a {
-  color: var(--black);
-  background-color: var(--primary);
+.btn-container .slider-btn img {
+  height: 18px;
 }
 
-.btn-container .now img,
-.btn-container .later img {
-  width: 11px;
-  margin-right: 20px;
+.btn-container .slider-btn a {
+  color: var(--black);
+  background-color: var(--primary);
+  font-family: 'Montserrat';
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .btn-container .later,
 .btn-container .later a {
   color: var(--primary);
   background-color: var(--black);
-}
-
-.btn-container a {
-  font-family: 'Montserrat';
-  font-weight: 700;
-  text-decoration: none;
-  text-transform: uppercase;
-  line-height: 2em;
 }
 
 .banner.activeSlide {
@@ -85,12 +82,10 @@
   .slider-container .btn-container {
     gap: 2em;
   }
-  .btn-container .now,
-  .btn-container .later {
+  .btn-container .slider-btn {
     padding: 0.3em 1em;
   }
-  .btn-container .now img,
-  .btn-container .later img {
+  .btn-container .slider-btn img {
     width: 8px;
     margin-right: 10px;
   }
@@ -102,7 +97,7 @@
 /* indicators */
 
 .ind-container {
-  background-color: rgba(211, 211, 211, 0.2);
+  background-color: rgba(211, 211, 211, 0.15);
   width: max-content;
   margin: 0 auto;
   border-radius: 500px;

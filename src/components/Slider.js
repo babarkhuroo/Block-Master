@@ -49,11 +49,11 @@ const Slider = ({ url }) => {
                 alt={title}
               />
               <div className='btn-container'>
-                <div className='now'>
+                <div className='slider-btn now'>
                   <img src={play} alt='' />
                   <a href='/#'>Watch Now</a>
                 </div>
-                <div className='later'>
+                <div className='slider-btn later'>
                   <img src={add} alt='' />
                   <a href='/#'>Watch Later</a>
                 </div>
