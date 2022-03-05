@@ -12,8 +12,8 @@
   object-fit: cover;
   object-position: center;
   position: absolute;
-  transform: translateY(-50%);
   top: 50%;
+  transform: translate(0, -50%);
   left: 0;
   opacity: 0;
   transition: all 1s ease;
@@ -102,7 +102,11 @@
 /* indicators */
 
 .ind-container {
+  background-color: rgba(211, 211, 211, 0.2);
+  width: max-content;
   margin: 0 auto;
+  border-radius: 500px;
+  padding: 0 5px;
   display: flex;
   justify-content: center;
   align-items: center;

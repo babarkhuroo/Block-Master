@@ -20,8 +20,13 @@
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn-container .btn:disabled {
   cursor: not-allowed;
+}
+
+.btn-container .btn:hover:enabled {
+  background-color: rgba(254, 217, 65, 0.8);
 }
