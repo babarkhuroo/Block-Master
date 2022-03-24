@@ -5,9 +5,12 @@ import Movie from './Movie'
 import Loading from './Loading'
 import { useGlobalContext } from './context'
 import { SEARCH } from '../App'
+import { useAppContext } from '../app_context'
 
 const Main = ({ url }) => {
   const { query } = useGlobalContext()
+  const { popular_movies } = useAppContext()
+  console.log(popular_movies)
   const [page, setPage] = useState(1)
   const { movies, loading } = useFetch(
     query ? SEARCH + query + `&page=${page}` : url + page

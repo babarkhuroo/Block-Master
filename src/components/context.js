@@ -16,4 +16,4 @@ export const useGlobalContext = () => {
   return useContext(AppContext)
 }
 
-export { AppContext, ContextApp }
+export { ContextApp }
