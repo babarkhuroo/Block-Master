@@ -19,7 +19,7 @@ const Movie = ({ movie }) => {
   return (
     // <Link to={`/movies/${id}`} key={id}>
     <>
-      <div className='movie-container' id={id} onClick={setClickedId(id)}>
+      <div className='movie-container' onClick={() => setClickedId(id)}>
         <img src={poster_path ? img_url + poster_path : def} alt={title} />
         <h3>{`${title} (${release_date ? release : 'N/A'})`}</h3>
         <div className='rating'>
@@ -27,7 +27,7 @@ const Movie = ({ movie }) => {
           <span>{vote_average}</span>
         </div>
       </div>
-      {clickedId && <SingleMovie id={clickedId} />}
+      {/* {clickedId && <SingleMovie id={clickedId} />} */}
     </>
     // </Link>
   )
