@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/Slider.css'
-import { useFetch } from '../useFetch'
 import play from '../assets/imgs/play.svg'
 import add from '../assets/imgs/add.svg'
+import { useAppContext } from '../app_context'
 
 const img_url = 'https://image.tmdb.org/t/p/w1280'
 
-const Slider = ({ url }) => {
+const Slider = () => {
   const [index, setIndex] = useState(0)
 
-  const { movies } = useFetch(url)
+  const { trending_movies: movies } = useAppContext()
   const sliders = movies.slice(0, 5)
 
   useEffect(() => {

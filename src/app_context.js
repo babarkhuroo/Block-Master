@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext, useReducer, useEffect } from 'react'
 import reducer from './app_reducer'
-import { POPULAR as url } from './constants'
+import { POPULAR as url, TRENDING as trending } from './constants'
 import { GET_POPULAR_BEGIN, GET_POPULAR_SUCCESS } from './actions'
 
 const AppContext = React.createContext()
@@ -18,20 +18,23 @@ const initialState = {
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const getMovies = async (url) => {
+  const getMovies = async (url, trending) => {
     dispatch({ type: GET_POPULAR_BEGIN })
     try {
-      const res = await fetch(url)
-      const data = await res.json()
-      const movies = data.results
-      dispatch({ type: GET_POPULAR_SUCCESS, payload: movies })
+      const [data1, data2] = await Promise.all([
+        fetch(url),
+        fetch(trending),
+      ]).then((res) => Promise.all(res.map((res) => res.json())))
+      const [pop, trend] = [data1.results, data2.results]
+      console.log(pop, trend)
+      dispatch({ type: GET_POPULAR_SUCCESS, payload: { trend, pop } })
     } catch (error) {
       console.log(error)
     }
   }
 
   useEffect(() => {
-    getMovies(url)
+    getMovies(url, trending)
   }, [])
 
   return (

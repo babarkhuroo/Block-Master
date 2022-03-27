@@ -21,9 +21,9 @@ function App() {
   return (
     <Router>
       <Navbar />
-      {/* <Slider url={TRENDING} /> */}
+      <Slider />
       <Routes>
-        <Route path='/' element={<Main url={POPULAR} />} />
+        <Route path='/' element={<Main />} />
         {/* <Route path='/now_playing' element={<Main url={NOW_PLAYING} />} /> */}
         {/* <Route path='/upcoming' element={<Main url={UPCOMING} />} /> */}
         {/* <Route path='/top_rated' element={<Main url={TOP_RATED} />} /> */}
