@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/Main.css'
 import Movie from './Movie'
 import Loading from './Loading'
 import { SEARCH } from '../App'
 import { useAppContext } from '../app_context'
 
-const Main = () => {
-  const { loading, popular_movies: movies } = useAppContext()
+const Main = ({ url }) => {
+  const { loading, movies, getMovies } = useAppContext()
+
+  useEffect(() => {
+    getMovies(url)
+  }, [url])
   // const [page, setPage] = useState(1)
   // const { moviess, loadingg } = useFetch(
   //   query ? SEARCH + query + `&page=${page}` : url + page

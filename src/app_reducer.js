@@ -1,10 +1,27 @@
 import {
+  GET_SLIDERS_BEGIN,
+  GET_SLIDERS_SUCCESS,
+  GET_SLIDERS_ERROR,
   GET_MOVIES_BEGIN,
   GET_MOVIES_SUCCESS,
   GET_MOVIES_ERROR,
 } from './actions'
 
 const app_reducer = (state, action) => {
+  if (action.type === GET_SLIDERS_BEGIN) {
+    return { ...state, movies_loading: true }
+  }
+  if (action.type === GET_SLIDERS_SUCCESS) {
+    return {
+      ...state,
+      movies_loading: false,
+      slider_movies: action.payload.trend,
+      movies: action.payload.pop,
+    }
+  }
+  if (action.type === GET_SLIDERS_ERROR) {
+    return { ...state, movies_loading: false, movies_error: true }
+  }
   if (action.type === GET_MOVIES_BEGIN) {
     return { ...state, movies_loading: true }
   }
@@ -12,8 +29,7 @@ const app_reducer = (state, action) => {
     return {
       ...state,
       movies_loading: false,
-      trending_movies: action.payload.trend,
-      popular_movies: action.payload.pop,
+      movies: action.payload.movies,
     }
   }
   if (action.type === GET_MOVIES_ERROR) {
