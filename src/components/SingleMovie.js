@@ -1,6 +1,6 @@
 import React from 'react'
 // import { useParams } from 'react-router-dom'
-import { useFetch } from '../useFetch'
+// import { useFetch } from '../useFetch'
 
 function SingleMovie({ clickedId }) {
   //   const { id } = useParams()

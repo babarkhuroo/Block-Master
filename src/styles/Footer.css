@@ -6,14 +6,8 @@
   font-family: 'Poppins';
 }
 
-.footer a {
+.footer span {
   color: var(--primary);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer a:hover {
-  color: rgba(254, 217, 65, 0.8);
 }
 
 p {

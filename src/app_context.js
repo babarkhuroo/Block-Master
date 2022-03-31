@@ -1,7 +1,6 @@
-import React from 'react'
-import { useContext, useReducer, useEffect } from 'react'
+import React, { useContext, useReducer, useState, useEffect } from 'react'
 import reducer from './app_reducer'
-import { TRENDING, POPULAR, SEARCH } from './constants'
+import { TRENDING, POPULAR } from './constants'
 import {
   GET_SLIDERS_BEGIN,
   GET_SLIDERS_SUCCESS,
@@ -22,6 +21,7 @@ const initialState = {
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const [query, setQuery] = useState('')
 
   const getSliders = async (TRENDING, POPULAR) => {
     dispatch({ type: GET_SLIDERS_BEGIN })
@@ -58,7 +58,7 @@ const AppProvider = ({ children }) => {
   }, [])
 
   return (
-    <AppContext.Provider value={{ ...state, getMovies }}>
+    <AppContext.Provider value={{ ...state, query, setQuery, getMovies }}>
       {children}
     </AppContext.Provider>
   )

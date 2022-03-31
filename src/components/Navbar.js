@@ -1,12 +1,13 @@
 import { useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { useGlobalContext } from './context'
 import '../styles/Navbar.css'
+import { useAppContext } from '../app_context'
+
 import logo from '../assets/imgs/logo-blockBuster.svg'
 import search_icon from '../assets/imgs/search-icon.svg'
 
 const Navbar = () => {
-  const { setQuery } = useGlobalContext()
+  const { setQuery } = useAppContext()
   const queryRef = useRef(null)
 
   const handleSubmit = (e) => {

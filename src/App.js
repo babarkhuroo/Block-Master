@@ -5,12 +5,10 @@ import Slider from './components/Slider'
 import Main from './components/Main'
 import Footer from './components/Footer'
 import Error from './components/Error'
-// import SingleMovie from './components/SingleMovie'
+import SingleMovie from './components/SingleMovie'
 import { POPULAR, NOW_PLAYING, UPCOMING, TOP_RATED } from './constants'
-import { useAppContext } from './app_context'
 
 function App() {
-  const { getMovies } = useAppContext()
   return (
     <Router>
       <Navbar />
