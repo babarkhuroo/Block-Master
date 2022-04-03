@@ -1,21 +1,20 @@
-import React, { useState } from 'react'
-import { useFetch } from '../useFetch'
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import '../styles/Main.css'
 import Movie from './Movie'
 import Loading from './Loading'
-import { useGlobalContext } from './context'
-import { SEARCH } from '../App'
+import { SEARCH as search_url } from '../constants'
+import { useAppContext } from '../app_context'
 
 const Main = ({ url }) => {
-  const { query } = useGlobalContext()
+  const {
+    movies_loading: loading,
+    movies,
+    getMovies,
+    setQuery,
+  } = useAppContext()
   const [page, setPage] = useState(1)
-  const { movies, loading } = useFetch(
-    query ? SEARCH + query + `&page=${page}` : url + page
-  )
-
-  if (loading) {
-    return <Loading />
-  }
+  const { query } = useParams()
 
   function prevPage() {
     if (page <= 1) {
@@ -27,6 +26,25 @@ const Main = ({ url }) => {
 
   function nextPage() {
     setPage((page) => page + 1)
+  }
+
+  useEffect(() => {
+    setQuery('')
+    setPage(1)
+    getMovies(query ? search_url + query + '&page=' + page : url + page)
+  }, [url])
+
+  useEffect(() => {
+    setPage(1)
+    getMovies(query ? search_url + query + '&page=' + page : url + page)
+  }, [query])
+
+  useEffect(() => {
+    getMovies(query ? search_url + query + '&page=' + page : url + page)
+  }, [page])
+
+  if (loading) {
+    return <Loading />
   }
 
   return (
