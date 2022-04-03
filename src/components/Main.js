@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import '../styles/Main.css'
 import Movie from './Movie'
 import Loading from './Loading'
@@ -10,10 +11,10 @@ const Main = ({ url }) => {
     movies_loading: loading,
     movies,
     getMovies,
-    query,
     setQuery,
   } = useAppContext()
   const [page, setPage] = useState(1)
+  const { query } = useParams()
 
   function prevPage() {
     if (page <= 1) {

@@ -6,7 +6,7 @@ import Main from './components/Main'
 import Footer from './components/Footer'
 import Error from './components/Error'
 import SingleMovie from './components/SingleMovie'
-import { POPULAR, NOW_PLAYING, UPCOMING, TOP_RATED } from './constants'
+import { POPULAR, NOW_PLAYING, UPCOMING, TOP_RATED, SEARCH } from './constants'
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route path='/now_playing' element={<Main url={NOW_PLAYING} />} />
         <Route path='/upcoming' element={<Main url={UPCOMING} />} />
         <Route path='/top_rated' element={<Main url={TOP_RATED} />} />
+        <Route path='/search_term=:query' element={<Main url={SEARCH} />} />
         {/* <Route path='/movie/:id' element={<SingleMovie />} /> */}
         <Route path='*' element={<Error />} />
       </Routes>
