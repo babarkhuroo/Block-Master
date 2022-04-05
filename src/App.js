@@ -18,7 +18,7 @@ function App() {
         <Route path='/now_playing' element={<Main url={NOW_PLAYING} />} />
         <Route path='/upcoming' element={<Main url={UPCOMING} />} />
         <Route path='/top_rated' element={<Main url={TOP_RATED} />} />
-        <Route path='/search_term=:query' element={<Main url={SEARCH} />} />
+        <Route path='/search_term=:query' element={<Main />} />
         {/* <Route path='/movie/:id' element={<SingleMovie />} /> */}
         <Route path='*' element={<Error />} />
       </Routes>
