@@ -16,7 +16,6 @@ const app_reducer = (state, action) => {
       ...state,
       movies_loading: false,
       slider_movies: action.payload.trend,
-      movies: action.payload.pop,
     }
   }
   if (action.type === GET_SLIDERS_ERROR) {

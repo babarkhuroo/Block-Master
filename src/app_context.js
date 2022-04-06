@@ -1,4 +1,5 @@
 import React, { useContext, useReducer, useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import reducer from './app_reducer'
 import { TRENDING, POPULAR } from './constants'
 import {
@@ -23,15 +24,12 @@ const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const [query, setQuery] = useState('')
 
-  const getSliders = async (TRENDING, POPULAR) => {
+  const getSliders = async (TRENDING) => {
     dispatch({ type: GET_SLIDERS_BEGIN })
     try {
-      const [data1, data2] = await Promise.all([
-        fetch(TRENDING),
-        fetch(POPULAR),
-      ]).then((res) => Promise.all(res.map((res) => res.json())))
-      const [trend, pop] = [data1.results.slice(0, 6), data2.results]
-      dispatch({ type: GET_SLIDERS_SUCCESS, payload: { trend, pop } })
+      const data = await fetch(TRENDING).then((res) => res.json())
+      const trend = data.results.slice(0, 6)
+      dispatch({ type: GET_SLIDERS_SUCCESS, payload: { trend } })
     } catch (error) {
       dispatch({ type: GET_SLIDERS_ERROR })
       console.log(error)
@@ -54,11 +52,18 @@ const AppProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    getSliders(TRENDING, POPULAR)
+    getSliders(TRENDING)
   }, [])
 
   return (
-    <AppContext.Provider value={{ ...state, query, setQuery, getMovies }}>
+    <AppContext.Provider
+      value={{
+        ...state,
+        query,
+        setQuery,
+        getMovies,
+      }}
+    >
       {children}
     </AppContext.Provider>
   )

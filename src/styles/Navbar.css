@@ -60,7 +60,6 @@
   align-items: center;
   margin-left: auto;
   width: 350px;
-  opacity: 70%;
 }
 
 .nav .form input {
@@ -98,16 +97,10 @@
 
 .nav .form .link {
   line-height: 0;
-  pointer-events: none;
 }
 
-.nav .form .btn:enabled:hover {
+.nav .form .btn:hover {
   background-color: rgba(254, 217, 65, 0.9);
-}
-
-.nav .form .btn:disabled {
-  background-color: var(--grey);
-  cursor: not-allowed;
 }
 
 .nav .form .btn img {

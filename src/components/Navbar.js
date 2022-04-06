@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { Link, NavLink, useParams } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import '../styles/Navbar.css'
 import { useAppContext } from '../app_context'
 
@@ -8,11 +8,13 @@ import search_icon from '../assets/imgs/search-icon.svg'
 
 const Navbar = () => {
   const { query, setQuery } = useAppContext()
+  const navigate = useNavigate()
   const queryRef = useRef(null)
 
   const handleSubmit = (e) => {
     e.preventDefault()
     setQuery(queryRef.current.value)
+    navigate(`/search_term=${queryRef.current.value}`)
   }
 
   return (
@@ -48,14 +50,15 @@ const Navbar = () => {
           type='search'
           name='search'
           id='search'
-          placeholder='Coming soon...'
-          disabled
+          placeholder='Search here...'
         />
-        <Link to={`/search_term=${query}`} className='link' disabled>
-          <button type='submit' className='btn'>
-            <img src={search_icon} alt='search icon' />
-          </button>
-        </Link>
+        <button
+          type='submit'
+          className='btn'
+          // onClick={() => navigate(`/search_term=${query}`)}
+        >
+          <img src={search_icon} alt='search icon' />
+        </button>
       </form>
     </nav>
   )
