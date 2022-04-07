@@ -35,12 +35,16 @@ const Main = ({ url }) => {
   }, [url])
 
   useEffect(() => {
-    setPage(1)
-    getMovies(query ? search_url + query + '&page=' + page : url + page)
+    if (query) {
+      setPage(1)
+      getMovies(query ? search_url + query + '&page=' + page : url + page)
+    }
   }, [query])
 
   useEffect(() => {
-    getMovies(query ? search_url + query + '&page=' + page : url + page)
+    if (page > 1) {
+      getMovies(query ? search_url + query + '&page=' + page : url + page)
+    }
   }, [page])
 
   if (loading) {
