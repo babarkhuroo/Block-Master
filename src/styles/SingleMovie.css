@@ -1,0 +1,8 @@
+.movie-details {
+  width: 100%;
+  background-color: darkgray;
+}
+
+.movie-details p {
+  word-wrap: break-word;
+}

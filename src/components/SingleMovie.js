@@ -1,25 +1,28 @@
-// import React from 'react'
-// // import { useParams } from 'react-router-dom'
-// // import { useFetch } from '../useFetch'
+import React, { useEffect } from 'react'
+import '../styles/SingleMovie.css'
+import { useParams } from 'react-router-dom'
+import { useAppContext } from '../app_context'
 
-// function SingleMovie({ clickedId }) {
-//   //   const { id } = useParams()
-//   const SINGLE = `https://api.themoviedb.org/3/movie/${clickedId}?api_key=${process.env.REACT_APP_API_KEY}`
+function SingleMovie() {
+  const { id } = useParams()
+  const { getSingleMovie, single_movie: movie } = useAppContext()
+  const { title, overview, release_date, genres, runtime } = movie
 
-//   const { movie, loading } = useFetch(SINGLE)
-//   const { title, overview, release_date, genres, runtime } = movie
-//   //   console.log(movie, loading)
-//   return (
-//     <div className='movie-details'>
-//       <h1>{title}</h1>
-//       <p>{overview}</p>
-//       <div className='details'>
-//         <span>{release_date}</span>
-//         {/* <span>{genres}</span> */}
-//         <span>{runtime}</span>
-//       </div>
-//     </div>
-//   )
-// }
+  useEffect(() => {
+    getSingleMovie(id)
+  }, [id])
 
-// export default SingleMovie
+  return (
+    <div className='movie-details'>
+      <h1>{title}</h1>
+      <p>{overview}</p>
+      <div className='details'>
+        <span>{release_date}</span>
+        {/* <span>{genres}</span> */}
+        <span>{runtime}</span>
+      </div>
+    </div>
+  )
+}
+
+export default SingleMovie
