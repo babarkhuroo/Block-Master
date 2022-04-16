@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Movie.css'
 import Star from '../assets/imgs/star.svg'
+import { useAppContext } from '../app_context'
 
 const img_url = 'https://image.tmdb.org/t/p/w342'
 const def =
   'https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg'
 
 const Movie = ({ movie }) => {
-  const [clickedId, setClickedId] = useState(0)
   const { id, title, vote_average, poster_path, release_date } = movie
+  const { setClickedId } = useAppContext()
   let release
   if (release_date) {
     release = release_date.slice(0, 4)

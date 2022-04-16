@@ -38,13 +38,17 @@ const app_reducer = (state, action) => {
     return { ...state, movies_loading: false, movies_error: true }
   }
   if (action.type === GET_SINGLE_MOVIE_BEGIN) {
-    return { ...state }
+    return { ...state, single_movie_loading: true }
   }
   if (action.type === GET_SINGLE_MOVIE_SUCCESS) {
-    return { ...state, single_movie: action.payload.data }
+    return {
+      ...state,
+      single_movie: action.payload.data,
+      single_movie_loading: false,
+    }
   }
   if (action.type === GET_SINGLE_MOVIE_ERROR) {
-    return { ...state }
+    return { ...state, single_movie_loading: false }
   }
 
   throw new Error(`No matching "${action.type}" - action type`)

@@ -21,11 +21,13 @@ const initialState = {
   slider_movies: [],
   movies: [],
   single_movie: [],
+  single_movie_loading: false,
 }
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const [query, setQuery] = useState('')
+  const [clickedId, setClickedId] = useState(0)
 
   const getSliders = async (TRENDING) => {
     dispatch({ type: GET_SLIDERS_BEGIN })
@@ -80,6 +82,8 @@ const AppProvider = ({ children }) => {
         ...state,
         query,
         setQuery,
+        clickedId,
+        setClickedId,
         getMovies,
         getSingleMovie,
       }}

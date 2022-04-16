@@ -4,5 +4,5 @@
 }
 
 .movie-details p {
-  word-wrap: break-word;
+  width: 100%;
 }
