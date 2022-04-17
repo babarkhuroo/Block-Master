@@ -12,13 +12,10 @@ function SingleMovie() {
     single_movie_loading,
   } = useAppContext()
   const { title, overview, release_date, genres, runtime } = movie
-  console.log(genres)
 
   useEffect(() => {
-    console.log('in effect')
     getSingleMovie(id)
   }, [])
-  console.log('after')
 
   if (single_movie_loading) {
     return <Loading />
@@ -30,13 +27,11 @@ function SingleMovie() {
       <p>{overview}</p>
       <div className='details'>
         <span className='release-date'>{release_date}</span>
-        {/* {genres.map((genre, index) => {
-          return (
-            <span key={index} className='genre'>
-              {genre.name}
-            </span>
-          )
-        })} */}
+        {genres.map((genre, index) => (
+          <span key={index} className='genre'>
+            {genre.name}
+          </span>
+        ))}
         <span className='runtime'>{runtime}</span>
       </div>
     </div>

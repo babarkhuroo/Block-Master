@@ -1,8 +1,29 @@
 .movie-details {
   width: 100%;
-  background-color: darkgray;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+}
+
+.movie-details h1 {
+  margin: 0 0 20px;
 }
 
 .movie-details p {
   width: 100%;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.details .genre {
+  background-color: darkslateblue;
+  padding: 3px 10px;
+  border-radius: 500px;
 }
