@@ -21,7 +21,7 @@ const initialState = {
   slider_movies: [],
   movies: [],
   single_movie: [],
-  single_movie_loading: true,
+  single_movie_loading: false,
 }
 
 const AppProvider = ({ children }) => {

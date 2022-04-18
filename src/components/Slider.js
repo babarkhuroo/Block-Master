@@ -10,7 +10,7 @@ const img_url = 'https://image.tmdb.org/t/p/w1280'
 const Slider = () => {
   const [index, setIndex] = useState(0)
 
-  const { slider_movies: sliders, isMovie } = useAppContext()
+  const { slider_movies: sliders } = useAppContext()
 
   useEffect(() => {
     let slideFunc = setInterval(() => {

@@ -14,6 +14,7 @@ const Main = ({ url }) => {
     getMovies,
     setQuery,
   } = useAppContext()
+
   const [page, setPage] = useState(1)
   const { query } = useParams()
 
