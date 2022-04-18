@@ -1,6 +1,6 @@
 import React, { useContext, useReducer, useState, useEffect } from 'react'
 import reducer from './app_reducer'
-import { TRENDING } from './constants'
+import { base_url, api_key, TRENDING } from './constants'
 import {
   GET_SLIDERS_BEGIN,
   GET_SLIDERS_SUCCESS,
@@ -59,9 +59,9 @@ const AppProvider = ({ children }) => {
   const getSingleMovie = async (id) => {
     dispatch({ type: GET_SINGLE_MOVIE_BEGIN })
     try {
-      const data = await fetch(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`
-      ).then((res) => res.json())
+      const data = await fetch(`${base_url}movie/${id}?${api_key}`).then(
+        (res) => res.json()
+      )
       dispatch({
         type: GET_SINGLE_MOVIE_SUCCESS,
         payload: { data },

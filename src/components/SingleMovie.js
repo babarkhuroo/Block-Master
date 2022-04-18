@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import '../styles/SingleMovie.css'
 import { useAppContext } from '../app_context'
 import Loading from './Loading'
+import { medium_img } from '../constants'
 
 function SingleMovie() {
   const {
@@ -23,10 +24,7 @@ function SingleMovie() {
   return (
     <div className='movie-details'>
       <div className='poster'>
-        <img
-          src={`https://image.tmdb.org/t/p/w342${poster_path}`}
-          alt='poster'
-        />
+        <img src={medium_img + poster_path} alt='poster' />
       </div>
       <div className='details'>
         <h1>{title}</h1>
