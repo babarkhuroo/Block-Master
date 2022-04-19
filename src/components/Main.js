@@ -31,9 +31,11 @@ const Main = ({ url }) => {
   }
 
   useEffect(() => {
-    setPage(1)
-    setQuery('')
-    getMovies(query ? search_url + query + '&page=' + page : url + page)
+    if (url) {
+      setPage(1)
+      setQuery('')
+      getMovies(query ? search_url + query + '&page=' + page : url + page)
+    }
   }, [url])
 
   useEffect(() => {
@@ -44,7 +46,7 @@ const Main = ({ url }) => {
   }, [query])
 
   useEffect(() => {
-    if (page > 1) {
+    if (page >= 1) {
       getMovies(query ? search_url + query + '&page=' + page : url + page)
     }
   }, [page])

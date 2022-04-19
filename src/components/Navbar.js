@@ -11,10 +11,12 @@ const Navbar = () => {
   const navigate = useNavigate()
   const queryRef = useRef(null)
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    await setQuery(queryRef.current.value)
-    navigate(`/search_term=${queryRef.current.value}`)
+    if (queryRef.current.value) {
+      setQuery(queryRef.current.value)
+      navigate(`/search_term=${queryRef.current.value}`)
+    }
   }
 
   return (
