@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import '../styles/Main.css'
+import Slider from './Slider'
 import Movie from './Movie'
 import Loading from './Loading'
 import { SEARCH as search_url } from '../constants'
@@ -13,6 +14,7 @@ const Main = ({ url }) => {
     getMovies,
     setQuery,
   } = useAppContext()
+
   const [page, setPage] = useState(1)
   const { query } = useParams()
 
@@ -29,39 +31,52 @@ const Main = ({ url }) => {
   }
 
   useEffect(() => {
-    setQuery('')
-    setPage(1)
-    getMovies(query ? search_url + query + '&page=' + page : url + page)
+    if (url) {
+      setPage(1)
+      setQuery('')
+      getMovies(query ? search_url + query + '&page=' + page : url + page)
+    }
   }, [url])
 
   useEffect(() => {
-    setPage(1)
-    getMovies(query ? search_url + query + '&page=' + page : url + page)
+    if (query) {
+      setPage(1)
+      getMovies(query ? search_url + query + '&page=' + page : url + page)
+    }
   }, [query])
 
   useEffect(() => {
-    getMovies(query ? search_url + query + '&page=' + page : url + page)
+    if (page >= 1) {
+      getMovies(query ? search_url + query + '&page=' + page : url + page)
+    }
   }, [page])
-
-  if (loading) {
-    return <Loading />
-  }
 
   return (
     <>
-      <section className='container'>
-        {movies.map((movie) => {
-          return <Movie key={movie.id} movie={movie} />
-        })}
-      </section>
-      <div className='btn-container'>
-        <button className='btn prev' onClick={prevPage} disabled={page === 1}>
-          Prev
-        </button>
-        <button className='btn next' onClick={nextPage}>
-          Next
-        </button>
-      </div>
+      <Slider />
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <section className='container'>
+            {movies.map((movie) => {
+              return <Movie key={movie.id} movie={movie} />
+            })}
+          </section>
+          <div className='btn-container'>
+            <button
+              className='btn prev'
+              onClick={prevPage}
+              disabled={page === 1}
+            >
+              Prev
+            </button>
+            <button className='btn next' onClick={nextPage}>
+              Next
+            </button>
+          </div>
+        </>
+      )}
     </>
   )
 }

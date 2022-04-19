@@ -7,14 +7,16 @@ import logo from '../assets/imgs/logo-blockBuster.svg'
 import search_icon from '../assets/imgs/search-icon.svg'
 
 const Navbar = () => {
-  const { query, setQuery } = useAppContext()
+  const { setQuery } = useAppContext()
   const navigate = useNavigate()
   const queryRef = useRef(null)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setQuery(queryRef.current.value)
-    navigate(`/search_term=${queryRef.current.value}`)
+    if (queryRef.current.value) {
+      setQuery(queryRef.current.value)
+      navigate(`/search_term=${queryRef.current.value}`)
+    }
   }
 
   return (
@@ -52,11 +54,7 @@ const Navbar = () => {
           id='search'
           placeholder='Search here...'
         />
-        <button
-          type='submit'
-          className='btn'
-          // onClick={() => navigate(`/search_term=${query}`)}
-        >
+        <button type='submit' className='btn'>
           <img src={search_icon} alt='search icon' />
         </button>
       </form>

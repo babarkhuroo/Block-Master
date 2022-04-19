@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/Slider.css'
 import { useAppContext } from '../app_context'
+import { large_img } from '../constants'
 
 import play from '../assets/imgs/play.svg'
 import add from '../assets/imgs/add.svg'
 
-const img_url = 'https://image.tmdb.org/t/p/w1280'
-
 const Slider = () => {
   const [index, setIndex] = useState(0)
-
   const { slider_movies: sliders } = useAppContext()
 
   useEffect(() => {
@@ -45,7 +43,7 @@ const Slider = () => {
             <React.Fragment key={idx}>
               <img
                 className={`banner ${position}`}
-                src={img_url + backdrop_path}
+                src={large_img + backdrop_path}
                 alt={title}
               />
               <div className='btn-container'>
