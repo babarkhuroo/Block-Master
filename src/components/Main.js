@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import '../styles/Main.css'
+import not_found from '../assets/imgs/not_found.svg'
 import Slider from './Slider'
 import Movie from './Movie'
 import Loading from './Loading'
@@ -56,7 +57,7 @@ const Main = ({ url }) => {
       <Slider />
       {loading ? (
         <Loading />
-      ) : (
+      ) : movies.length > 0 ? (
         <>
           <section className='container'>
             {movies.map((movie) => {
@@ -76,6 +77,11 @@ const Main = ({ url }) => {
             </button>
           </div>
         </>
+      ) : (
+        <div className='no-results'>
+          <img src={not_found} alt='no-results' />
+          <h2>No results found for "{query}"</h2>
+        </div>
       )}
     </>
   )

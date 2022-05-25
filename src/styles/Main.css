@@ -30,3 +30,11 @@
 .btn-container .btn:hover:enabled {
   background-color: rgba(254, 217, 65, 0.8);
 }
+
+.no-results {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 20px auto;
+}
