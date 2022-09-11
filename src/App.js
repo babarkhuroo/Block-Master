@@ -5,7 +5,12 @@ import Main from './components/Main'
 import Footer from './components/Footer'
 import Error from './components/Error'
 import SingleMovie from './components/SingleMovie'
-import { POPULAR, NOW_PLAYING, UPCOMING, TOP_RATED } from './constants'
+import {
+  POPULAR,
+  NOW_PLAYING,
+  UPCOMING,
+  TOP_RATED,
+} from './utilities/constants'
 
 function App() {
   return (

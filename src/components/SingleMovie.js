@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import '../styles/SingleMovie.css'
-import { useAppContext } from '../app_context'
+import { useAppContext } from '../setup/app_context'
 import Loading from './Loading'
-import { medium_img } from '../constants'
+import { medium_img } from '../utilities/constants'
 
 function SingleMovie() {
   const {

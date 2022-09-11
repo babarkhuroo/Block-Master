@@ -5,8 +5,8 @@ import not_found from '../assets/imgs/not_found.svg'
 import Slider from './Slider'
 import Movie from './Movie'
 import Loading from './Loading'
-import { SEARCH as search_url } from '../constants'
-import { useAppContext } from '../app_context'
+import { SEARCH as search_url } from '../utilities/constants'
+import { useAppContext } from '../setup/app_context'
 
 const Main = ({ url }) => {
   const {
@@ -68,8 +68,7 @@ const Main = ({ url }) => {
             <button
               className='btn prev'
               onClick={prevPage}
-              disabled={page === 1}
-            >
+              disabled={page === 1}>
               Prev
             </button>
             <button className='btn next' onClick={nextPage}>

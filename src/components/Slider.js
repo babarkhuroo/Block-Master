@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/Slider.css'
-import { useAppContext } from '../app_context'
-import { large_img } from '../constants'
+import { useAppContext } from '../setup/app_context'
+import { large_img } from '../utilities/constants'
 
 import play from '../assets/imgs/play.svg'
 import add from '../assets/imgs/add.svg'
@@ -71,8 +71,7 @@ const Slider = () => {
             <div
               key={idx}
               className={`indicator ${sClass}`}
-              onClick={() => setIndex(idx)}
-            ></div>
+              onClick={() => setIndex(idx)}></div>
           )
         })}
       </div>

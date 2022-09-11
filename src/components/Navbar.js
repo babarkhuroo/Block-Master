@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import '../styles/Navbar.css'
-import { useAppContext } from '../app_context'
+import { useAppContext } from '../setup/app_context'
 
 import logo from '../assets/imgs/logo-blockBuster.svg'
 import search_icon from '../assets/imgs/search-icon.svg'
@@ -29,20 +29,17 @@ const Navbar = () => {
       <div className='sub-menu'>
         <NavLink
           className={({ isActive }) => (isActive ? 'active-link' : null)}
-          to='/now_playing'
-        >
+          to='/now_playing'>
           Now Playing
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? 'active-link' : null)}
-          to='/upcoming'
-        >
+          to='/upcoming'>
           Upcoming
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? 'active-link' : null)}
-          to='/top_rated'
-        >
+          to='/top_rated'>
           Top Rated
         </NavLink>
       </div>

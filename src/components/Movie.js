@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Movie.css'
 import Star from '../assets/imgs/star.svg'
-import { useAppContext } from '../app_context'
-import { default_img, small_img } from '../constants'
+import { useAppContext } from '../setup/app_context'
+import { default_img, small_img } from '../utilities/constants'
 
 const Movie = ({ movie }) => {
   const { id, title, vote_average, poster_path, release_date } = movie
@@ -18,8 +18,7 @@ const Movie = ({ movie }) => {
       to={`/movie/${id}`}
       className='movie-container'
       key={id}
-      onClick={() => setClickedId(id)}
-    >
+      onClick={() => setClickedId(id)}>
       <img
         src={poster_path ? small_img + poster_path : default_img}
         alt={title}

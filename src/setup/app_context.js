@@ -1,6 +1,6 @@
 import React, { useContext, useReducer, useState, useEffect } from 'react'
 import reducer from './app_reducer'
-import { base_url, api_key, TRENDING } from './constants'
+import { base_url, api_key, TRENDING } from '../utilities/constants'
 import {
   GET_SLIDERS_BEGIN,
   GET_SLIDERS_SUCCESS,
@@ -86,8 +86,7 @@ const AppProvider = ({ children }) => {
         setClickedId,
         getMovies,
         getSingleMovie,
-      }}
-    >
+      }}>
       {children}
     </AppContext.Provider>
   )
