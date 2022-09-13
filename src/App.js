@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Main from './components/Main'
 import Footer from './components/Footer'
@@ -14,7 +13,7 @@ import {
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path='/' element={<Main url={POPULAR} />} />
@@ -26,7 +25,7 @@ function App() {
         <Route path='*' element={<Error />} />
       </Routes>
       <Footer />
-    </Router>
+    </BrowserRouter>
   )
 }
 
