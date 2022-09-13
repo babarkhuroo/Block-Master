@@ -1,8 +1,8 @@
-import '../styles/Error.css'
+import styles from './Error.module.css'
 
 function Error() {
   return (
-    <div className='error-container'>
+    <div className={styles.errorContainer}>
       <p>404 Error. Page not found</p>
     </div>
   )

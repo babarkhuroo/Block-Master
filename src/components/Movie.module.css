@@ -1,4 +1,4 @@
-.movie-container {
+.movieContainer {
   color: white;
   background-color: var(--black);
   font-family: 'Poppins';
@@ -12,24 +12,24 @@
   transition: box-shadow 0.2s ease-in-out;
 }
 
-.movie-container:hover {
+.movieContainer:hover {
   box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.2);
 }
 
-.movie-container img {
+.movieContainer img {
   border-radius: 10px;
   width: 100%;
 }
 
-.movie-container > img {
+.movieContainer > img {
   min-height: 250px;
 }
 
-.movie-container h4 {
+.movieContainer h4 {
   margin: 0 0.5rem 0.5rem;
 }
 
-.movie-container .rating {
+.movieContainer .rating {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 3px;
   width: 50px;
@@ -42,12 +42,12 @@
   left: -4px;
 }
 
-.movie-container .star {
+.movieContainer .star {
   height: 14px;
   width: 20px;
 }
 
-.movie-container span {
+.movieContainer span {
   padding: 0 2px;
   font-family: 'Montserrat';
   font-size: 1.1rem;

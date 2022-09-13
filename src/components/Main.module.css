@@ -5,14 +5,14 @@
   gap: 1em;
 }
 
-.btn-container {
+.btnContainer {
   max-width: max-content;
   margin: 20px auto;
   display: flex;
   gap: 10px;
 }
 
-.btn-container .btn {
+.btnContainer .btn {
   font-family: 'Montserrat';
   font-weight: 600;
   background-color: var(--primary);
@@ -23,15 +23,15 @@
   transition: background-color 0.3s ease;
 }
 
-.btn-container .btn:disabled {
+.btnContainer .btn:disabled {
   cursor: not-allowed;
 }
 
-.btn-container .btn:hover:enabled {
+.btnContainer .btn:hover:enabled {
   background-color: rgba(254, 217, 65, 0.8);
 }
 
-.no-results {
+.noResults {
   font-family: 'Montserrat';
   font-weight: 600;
   font-size: 1.5em;

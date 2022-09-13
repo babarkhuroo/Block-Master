@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import '../styles/Main.css'
+import styles from './Main.module.css'
 import not_found from '../assets/imgs/not_found.svg'
 import Slider from './Slider'
 import Movie from './Movie'
@@ -59,25 +59,27 @@ const Main = ({ url }) => {
         <Loading />
       ) : movies.length > 0 ? (
         <>
-          <section className='container'>
+          <section className={styles.container}>
             {movies.map((movie) => {
               return <Movie key={movie.id} movie={movie} />
             })}
           </section>
-          <div className='btn-container'>
+          <div className={styles.btnContainer}>
             <button
-              className='btn prev'
+              className={`${styles.btn} ${styles.prev}`}
               onClick={prevPage}
               disabled={page === 1}>
               Prev
             </button>
-            <button className='btn next' onClick={nextPage}>
+            <button
+              className={`${styles.btn} ${styles.next}`}
+              onClick={nextPage}>
               Next
             </button>
           </div>
         </>
       ) : (
-        <div className='no-results'>
+        <div className={styles.noResults}>
           <img src={not_found} alt='no-results' />
           <h2>No results found for "{query}"</h2>
         </div>

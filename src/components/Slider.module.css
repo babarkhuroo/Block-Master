@@ -1,4 +1,4 @@
-.slider-container {
+.sliderContainer {
   padding-bottom: 30%;
   margin: 0 10px 50px;
   border-radius: 10px;
@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.slider-container .banner {
+.sliderContainer .banner {
   height: inherit;
   width: 100%;
   object-fit: cover;
@@ -19,7 +19,7 @@
   transition: all 1s ease;
 }
 
-.slider-container .btn-container {
+.sliderContainer .btnContainer {
   position: absolute;
   left: 0px;
   bottom: 0px;
@@ -28,7 +28,7 @@
   margin: 2em;
 }
 
-.btn-container .slider-btn {
+.btnContainer .sliderBtn {
   background-color: var(--primary);
   color: var(--black);
   display: flex;
@@ -41,11 +41,11 @@
   cursor: pointer;
 }
 
-.btn-container .slider-btn img {
+.btnContainer .sliderBtn img {
   height: 18px;
 }
 
-.btn-container .slider-btn a {
+.btnContainer .sliderBtn a {
   color: var(--black);
   background-color: var(--primary);
   font-family: 'Montserrat';
@@ -54,8 +54,8 @@
   text-transform: uppercase;
 }
 
-.btn-container .later,
-.btn-container .later a {
+.btnContainer .later,
+.btnContainer .later a {
   color: var(--primary);
   background-color: var(--black);
 }
@@ -76,27 +76,27 @@
 }
 
 @media screen and (max-width: 768px) {
-  .slider-container {
+  .sliderContainer {
     padding-bottom: 50%;
   }
-  .slider-container .btn-container {
+  .sliderContainer .btnContainer {
     gap: 2em;
   }
-  .btn-container .slider-btn {
+  .btnContainer .sliderBtn {
     padding: 0.3em 1em;
   }
-  .btn-container .slider-btn img {
+  .btnContainer .sliderBtn img {
     width: 8px;
     margin-right: 10px;
   }
-  .btn-container a {
+  .btnContainer a {
     font-size: 12px;
   }
 }
 
 /* indicators */
 
-.ind-container {
+.indContainer {
   background-color: rgba(211, 211, 211, 0.15);
   width: max-content;
   margin: 0 auto;

@@ -1,8 +1,8 @@
-import '../styles/Footer.css'
+import styles from './Footer.module.css'
 
 function Footer() {
   return (
-    <footer className='footer'>
+    <footer className={styles.footer}>
       &copy; {new Date().getFullYear()} <span>Sheikh Camel</span>
       <p>All rights reserved.</p>
     </footer>

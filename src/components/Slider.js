@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import '../styles/Slider.css'
+import styles from './Slider.module.css'
 import { useAppContext } from '../setup/app_context'
 import { large_img } from '../utilities/constants'
 
@@ -26,7 +26,7 @@ const Slider = () => {
 
   return (
     <>
-      <div className='slider-container'>
+      <div className={styles.sliderContainer}>
         {sliders.map((slider, idx) => {
           const { backdrop_path, title } = slider
           let position = 'nextSlide'
@@ -42,16 +42,16 @@ const Slider = () => {
           return (
             <React.Fragment key={idx}>
               <img
-                className={`banner ${position}`}
+                className={`${styles.banner} ${styles[position]}`}
                 src={large_img + backdrop_path}
                 alt={title}
               />
-              <div className='btn-container'>
-                <div className='slider-btn now'>
+              <div className={styles.btnContainer}>
+                <div className={`${styles.sliderBtn} now`}>
                   <img src={play} alt='' />
                   <a href='/#'>Watch Now</a>
                 </div>
-                <div className='slider-btn later'>
+                <div className={`${styles.sliderBtn} later`}>
                   <img src={add} alt='' />
                   <a href='/#'>Watch Later</a>
                 </div>
@@ -61,7 +61,7 @@ const Slider = () => {
         })}
       </div>
 
-      <div className='ind-container'>
+      <div className={styles.indContainer}>
         {sliders.map((_, idx) => {
           let sClass = ''
           if (index === idx) {
@@ -70,7 +70,7 @@ const Slider = () => {
           return (
             <div
               key={idx}
-              className={`indicator ${sClass}`}
+              className={`${styles.indicator} ${styles[sClass]}`}
               onClick={() => setIndex(idx)}></div>
           )
         })}

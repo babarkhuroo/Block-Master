@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import '../styles/SingleMovie.css'
+import styles from './SingleMovie.module.css'
 import { useAppContext } from '../setup/app_context'
 import Loading from './Loading'
 import { medium_img } from '../utilities/constants'
@@ -22,26 +22,26 @@ function SingleMovie() {
   }
 
   return (
-    <div className='movie-details'>
-      <div className='poster'>
+    <div className={styles.movieDetails}>
+      <div className={styles.poster}>
         <img src={medium_img + poster_path} alt='poster' />
       </div>
-      <div className='details'>
+      <div className={styles.details}>
         <h1>{title}</h1>
         <p>{overview}</p>
-        <div className='others'>
-          <p className='release-date'>
+        <div className={styles.others}>
+          <p className={styles.releaseDate}>
             Release Date : <span>{release_date}</span>
           </p>
-          <p className='genres'>
+          <p className={styles.genres}>
             Tags :{' '}
             {genres?.map((genre, index) => (
-              <span key={index} className='genre'>
+              <span key={index} className={styles.genre}>
                 {genre.name}
               </span>
             ))}
           </p>
-          <p className='runtime'>
+          <p className={styles.runtime}>
             Runtime : <span>{runtime} mins</span>
           </p>
         </div>

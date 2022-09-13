@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../styles/Movie.css'
+import styles from './Movie.module.css'
 import Star from '../assets/imgs/star.svg'
 import { useAppContext } from '../setup/app_context'
 import { default_img, small_img } from '../utilities/constants'
@@ -16,7 +16,7 @@ const Movie = ({ movie }) => {
   return (
     <Link
       to={`/movie/${id}`}
-      className='movie-container'
+      className={styles.movieContainer}
       key={id}
       onClick={() => setClickedId(id)}>
       <img
@@ -24,8 +24,8 @@ const Movie = ({ movie }) => {
         alt={title}
       />
       <h4>{`${title} (${release_date ? release : 'N/A'})`}</h4>
-      <div className='rating'>
-        <img src={Star} alt='star' className='star' />
+      <div className={styles.rating}>
+        <img src={Star} alt='star' className={styles.star} />
         <span>{vote_average}</span>
       </div>
     </Link>

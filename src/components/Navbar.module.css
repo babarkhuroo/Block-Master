@@ -10,7 +10,7 @@
   position: relative;
 }
 
-.nav .logo .bg-title {
+.nav .logo .bgTitle {
   position: absolute;
   left: 14px;
   right: 11px;
@@ -31,13 +31,13 @@
   z-index: 5;
 }
 
-.nav .sub-menu {
+.nav .subMenu {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-.nav .sub-menu a {
+.nav .subMenu a {
   font-family: 'Montserrat';
   font-size: 1.1rem;
   font-weight: bold;
@@ -49,8 +49,8 @@
   transition: color 0.3s ease, border-bottom 0.2s ease;
 }
 
-.nav .sub-menu a:hover,
-.nav .sub-menu a.active-link {
+.nav .subMenu a:hover,
+.nav .subMenu a.activeLink {
   color: var(--primary);
   border-bottom: 3px solid var(--primary);
 }

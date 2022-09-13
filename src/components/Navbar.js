@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import '../styles/Navbar.css'
+import styles from './Navbar.module.css'
 import { useAppContext } from '../setup/app_context'
 
 import logo from '../assets/imgs/logo-blockBuster.svg'
@@ -20,30 +20,30 @@ const Navbar = () => {
   }
 
   return (
-    <nav className='nav'>
-      <Link to='/' className='logo'>
+    <nav className={styles.nav}>
+      <Link to='/' className={styles.logo}>
         <img src={logo} alt='blockbuster' />
-        <div className='bg-title'></div>
+        <div className={styles.bgTitle}></div>
         <h2>Block Master</h2>
       </Link>
-      <div className='sub-menu'>
+      <div className={styles.subMenu}>
         <NavLink
-          className={({ isActive }) => (isActive ? 'active-link' : null)}
+          className={({ isActive }) => (isActive ? styles.activeLink : null)}
           to='/now_playing'>
           Now Playing
         </NavLink>
         <NavLink
-          className={({ isActive }) => (isActive ? 'active-link' : null)}
+          className={({ isActive }) => (isActive ? styles.activeLink : null)}
           to='/upcoming'>
           Upcoming
         </NavLink>
         <NavLink
-          className={({ isActive }) => (isActive ? 'active-link' : null)}
+          className={({ isActive }) => (isActive ? styles.activeLink : null)}
           to='/top_rated'>
           Top Rated
         </NavLink>
       </div>
-      <form className='form' onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <input
           ref={queryRef}
           type='search'
@@ -51,7 +51,7 @@ const Navbar = () => {
           id='search'
           placeholder='Search here...'
         />
-        <button type='submit' className='btn'>
+        <button type='submit' className={styles.btn}>
           <img src={search_icon} alt='search icon' />
         </button>
       </form>
