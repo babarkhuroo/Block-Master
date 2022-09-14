@@ -1,31 +1,38 @@
 .sliderContainer {
-  padding-bottom: 30%;
-  margin: 0 10px 50px;
+  height: 400px;
+  max-width: 100%;
   border-radius: 10px;
+  margin: 0 10px;
   position: relative;
   overflow: hidden;
 }
 
-.sliderContainer .banner {
-  height: inherit;
+.banner {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 1s ease;
+  overflow: hidden;
+}
+
+.banner .sliderImage {
+  height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  left: 0;
-  opacity: 0;
-  transition: all 1s ease;
 }
 
-.sliderContainer .btnContainer {
+.btnContainer {
   position: absolute;
-  left: 0px;
-  bottom: 0px;
+  left: 2em;
+  bottom: 2em;
   display: flex;
   gap: 1em;
-  margin: 2em;
 }
 
 .btnContainer .sliderBtn {
@@ -47,7 +54,6 @@
 
 .btnContainer .sliderBtn a {
   color: var(--black);
-  background-color: var(--primary);
   font-family: 'Montserrat';
   font-weight: 700;
   text-decoration: none;
@@ -99,13 +105,12 @@
 .indContainer {
   background-color: rgba(211, 211, 211, 0.15);
   width: max-content;
-  margin: 0 auto;
+  margin: 15px auto 30px;
   border-radius: 500px;
   padding: 0 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-30px);
 }
 
 .indicator {
@@ -125,5 +130,5 @@
 .indicator.active {
   background-color: var(--white);
   border-radius: 500px;
-  width: 12px;
+  width: 15px;
 }

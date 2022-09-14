@@ -26,7 +26,7 @@ const Slider = () => {
 
   return (
     <>
-      <div className={styles.sliderContainer}>
+      <section className={styles.sliderContainer}>
         {sliders.map((slider, idx) => {
           const { backdrop_path, title } = slider
           let position = 'nextSlide'
@@ -40,27 +40,27 @@ const Slider = () => {
             position = 'prevSlide'
           }
           return (
-            <React.Fragment key={idx}>
+            <div key={idx} className={`${styles.banner} ${styles[position]}`}>
               <img
-                className={`${styles.banner} ${styles[position]}`}
                 src={large_img + backdrop_path}
                 alt={title}
+                className={styles.sliderImage}
               />
+
               <div className={styles.btnContainer}>
                 <div className={styles.sliderBtn}>
-                  <img src={play} alt='' />
+                  <img src={play} alt='play' />
                   <a href='/#'>Watch Now</a>
                 </div>
                 <div className={`${styles.sliderBtn} ${styles.later}`}>
-                  <img src={add} alt='' />
+                  <img src={add} alt='add' />
                   <a href='/#'>Watch Later</a>
                 </div>
               </div>
-            </React.Fragment>
+            </div>
           )
         })}
-      </div>
-
+      </section>
       <div className={styles.indContainer}>
         {sliders.map((_, idx) => {
           let sClass = ''
