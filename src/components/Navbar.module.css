@@ -1,47 +1,42 @@
 .nav {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  gap: 3rem;
-  padding: 2rem;
+  margin: 32px 0;
 }
 
-.nav .logo {
+.logo {
   position: relative;
+  margin: 0 32px;
 }
 
-.nav .logo .bgTitle {
-  position: absolute;
-  left: 14px;
-  right: 11px;
-  top: 14px;
-  bottom: 21px;
-  background: #0e3fa9;
-  transform: rotate(-10deg);
-}
-
-.nav .logo h2 {
+.logo h2 {
   font-size: 12px;
   font-family: 'Poppins';
   color: #ffa903;
-  transform: rotate(-10deg);
+  background: #0e3fa9;
+  padding: 0 2px;
   position: absolute;
-  top: 12px;
-  left: 16px;
+  left: 14px;
+  top: 23px;
+  transform: rotate(-10deg);
   z-index: 5;
 }
 
-.nav .subMenu {
+.subMenu {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
 }
 
-.nav .subMenu a {
+.subMenu li {
+  list-style-type: none;
+  padding: 0 12px;
+}
+
+.subMenu .navLinks {
+  font-size: 18px;
   font-family: 'Montserrat';
-  font-size: 1.1rem;
   font-weight: bold;
-  padding: 0.3rem 0;
+  padding: 5px 0;
   color: var(--white);
   border-bottom: 3px solid transparent;
   text-decoration: none;
@@ -49,22 +44,23 @@
   transition: color 0.3s ease, border-bottom 0.2s ease;
 }
 
-.nav .subMenu a:hover,
-.nav .subMenu a.activeLink {
+.subMenu .navLinks:hover,
+.subMenu .navLinks.activeLink {
   color: var(--primary);
   border-bottom: 3px solid var(--primary);
 }
 
-.nav .form {
+.form {
   display: flex;
   align-items: center;
   margin-left: auto;
-  width: 350px;
+  width: 400px;
+  padding: 0 32px;
 }
 
-.nav .form input {
-  font-family: 'Montserrat';
+.form .searchField {
   font-size: 16px;
+  font-family: 'Montserrat';
   padding: 10px;
   height: 44px;
   width: 100%;
@@ -73,16 +69,15 @@
   border-radius: 8px 0 0 8px;
 }
 
-.nav .form input::placeholder {
+.form .searchField::placeholder {
   color: var(--grey);
 }
 
-.nav .form input:focus {
+.form .searchField:focus {
   outline: none;
-  color: var(--black);
 }
 
-.nav .form .btn {
+.form .btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,15 +90,11 @@
   transition: background-color 0.3s ease;
 }
 
-.nav .form .link {
-  line-height: 0;
-}
-
-.nav .form .btn:hover {
+.form .btn:hover {
   background-color: rgba(254, 217, 65, 0.9);
 }
 
-.nav .form .btn img {
+.form .btn img {
   height: 20px;
   width: 20px;
 }
@@ -114,17 +105,17 @@
     gap: 0;
     font-size: 14px;
   }
-  .nav .form {
+  .form {
     margin: 0;
   }
-  .nav .form input,
-  .nav .form .btn {
+  .form .searchField,
+  .form .btn {
     height: 35px;
   }
-  .nav .form .btn {
+  .form .btn {
     padding: 8px 18px;
   }
-  .nav .form .btn img {
+  .form .btn img {
     height: 18px;
     width: 18px;
   }

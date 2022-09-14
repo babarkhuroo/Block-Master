@@ -22,29 +22,47 @@ const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <Link to='/' className={styles.logo}>
-        <img src={logo} alt='blockbuster' />
-        <div className={styles.bgTitle}></div>
+        <img src={logo} alt='blockmaster' />
         <h2>Block Master</h2>
       </Link>
-      <div className={styles.subMenu}>
-        <NavLink
-          className={({ isActive }) => (isActive ? styles.activeLink : null)}
-          to='/now_playing'>
-          Now Playing
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? styles.activeLink : null)}
-          to='/upcoming'>
-          Upcoming
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? styles.activeLink : null)}
-          to='/top_rated'>
-          Top Rated
-        </NavLink>
-      </div>
+      <ul className={styles.subMenu}>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? `${styles.activeLink} ${styles.navLinks}`
+                : styles.navLinks
+            }
+            to='/now_playing'>
+            Now Playing
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? `${styles.activeLink} ${styles.navLinks}`
+                : styles.navLinks
+            }
+            to='/upcoming'>
+            Upcoming
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? `${styles.activeLink} ${styles.navLinks}`
+                : styles.navLinks
+            }
+            to='/top_rated'>
+            Top Rated
+          </NavLink>
+        </li>
+      </ul>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
+          className={styles.searchField}
           ref={queryRef}
           type='search'
           name='search'

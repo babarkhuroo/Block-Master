@@ -47,11 +47,11 @@ const Slider = () => {
                 alt={title}
               />
               <div className={styles.btnContainer}>
-                <div className={`${styles.sliderBtn} now`}>
+                <div className={styles.sliderBtn}>
                   <img src={play} alt='' />
                   <a href='/#'>Watch Now</a>
                 </div>
-                <div className={`${styles.sliderBtn} later`}>
+                <div className={`${styles.sliderBtn} ${styles.later}`}>
                   <img src={add} alt='' />
                   <a href='/#'>Watch Later</a>
                 </div>
