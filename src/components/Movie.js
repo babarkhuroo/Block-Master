@@ -22,11 +22,12 @@ const Movie = ({ movie }) => {
       <img
         src={poster_path ? small_img + poster_path : default_img}
         alt={title}
+        className={styles.poster}
       />
       <h4>{`${title} (${release_date ? release : 'N/A'})`}</h4>
       <div className={styles.rating}>
         <img src={Star} alt='star' className={styles.star} />
-        <span>{vote_average}</span>
+        <span className={styles.vote}>{vote_average}</span>
       </div>
     </Link>
   )

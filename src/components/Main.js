@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import styles from './Main.module.css'
-import not_found from '../assets/imgs/not_found.svg'
 import Slider from './Slider'
 import Movie from './Movie'
 import Loading from './Loading'
+import not_found from '../assets/imgs/not_found.svg'
 import { SEARCH as search_url } from '../utilities/constants'
 import { useAppContext } from '../setup/app_context'
 

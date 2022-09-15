@@ -2,11 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 1em;
+  gap: 40px;
 }
 
 .btnContainer {
-  max-width: max-content;
+  width: max-content;
   margin: 20px auto;
   display: flex;
   gap: 10px;
@@ -27,14 +27,14 @@
   cursor: not-allowed;
 }
 
-.btnContainer .btn:hover:enabled {
+.btnContainer .btn:enabled:hover {
   background-color: rgba(254, 217, 65, 0.8);
 }
 
 .noResults {
+  font-size: 1.5em;
   font-family: 'Montserrat';
   font-weight: 600;
-  font-size: 1.5em;
   text-align: center;
   margin: 20px auto;
 }
