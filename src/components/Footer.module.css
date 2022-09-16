@@ -1,10 +1,8 @@
 .footer {
-  height: 50px;
   width: max-content;
-  padding: 1rem;
-  margin: 0 auto;
   font-family: 'Poppins';
   font-weight: 700;
+  margin: 30px auto;
 }
 
 .footer span {
