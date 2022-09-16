@@ -9,10 +9,6 @@ const Movie = ({ movie }) => {
   const { id, title, vote_average, poster_path, release_date } = movie
   const { setClickedId } = useAppContext()
 
-  let release
-  if (release_date) {
-    release = release_date.slice(0, 4)
-  }
   return (
     <Link
       to={`/movie/${id}`}
@@ -24,7 +20,7 @@ const Movie = ({ movie }) => {
         alt={title}
         className={styles.poster}
       />
-      <h4>{`${title} (${release_date ? release : 'N/A'})`}</h4>
+      <h4>{`${title} (${release_date ? release_date.slice(0, 4) : 'N/A'})`}</h4>
       <div className={styles.rating}>
         <img src={Star} alt='star' className={styles.star} />
         <span className={styles.vote}>{vote_average}</span>
