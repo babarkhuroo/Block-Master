@@ -1,7 +1,14 @@
 .loading {
-  margin: 50px auto;
+  width: max-content;
+  font-size: 40px;
   font-family: 'Montserrat';
-  font-size: 35px;
   font-weight: bold;
   text-align: center;
+  margin: 50px auto;
+  padding: 10px;
+}
+
+.loading span {
+  display: block;
+  margin-top: 10px;
 }

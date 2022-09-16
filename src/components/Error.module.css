@@ -1,5 +1,13 @@
 .errorContainer {
+  width: max-content;
+  font-size: 40px;
   font-family: 'Montserrat';
-  font-size: 5rem;
-  padding: 5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 150px auto;
+}
+
+.errorContainer span {
+  display: block;
+  margin-top: 20px;
 }

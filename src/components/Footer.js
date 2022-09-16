@@ -4,8 +4,7 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <p>
-        &copy; {new Date().getFullYear()}
-        <span>Sheikh Camel</span>
+        &copy; {new Date().getFullYear()} <span>Sheikh Camel</span>
       </p>
       <p>All rights reserved.</p>
     </footer>
