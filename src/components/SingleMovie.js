@@ -23,11 +23,13 @@ function SingleMovie() {
 
   return (
     <section className={styles.movieDetails}>
-      <img
-        src={poster_path ? medium_img + poster_path : default_img}
-        alt='poster'
-        className={styles.poster}
-      />
+      <div className={styles.posterContainer}>
+        <img
+          src={poster_path ? medium_img + poster_path : default_img}
+          alt='poster'
+          className={styles.poster}
+        />
+      </div>
       <div className={styles.details}>
         <h1 className={styles.title}>{`${title} (${
           release_date ? release_date.slice(0, 4) : 'N/A'

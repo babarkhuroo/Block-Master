@@ -1,5 +1,5 @@
 .movieContainer {
-  width: 185px;
+  width: 226px;
   text-decoration: none;
   font-family: 'Poppins';
   color: white;
@@ -16,12 +16,13 @@
 }
 
 .movieContainer .poster {
-  min-height: 250px;
+  height: 339px;
   width: 100%;
   border-radius: 10px;
 }
 
 .movieContainer h4 {
+  font-size: 20px;
   margin: 0 0.5em 0.5em;
 }
 
