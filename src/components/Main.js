@@ -60,9 +60,16 @@ const Main = ({ url }) => {
       ) : movies.length > 0 ? (
         <>
           <section className={styles.container}>
-            {movies.map((movie) => {
-              return <Movie key={movie.id} movie={movie} />
-            })}
+            <div className={styles.titleContainer}>
+              <h2 className={styles.pageTitle}>Popular Movies</h2>
+              <div className={styles.line}></div>
+              <h3 className={styles.pageNumber}>Page {page}</h3>
+            </div>
+            <div className={styles.movieContainer}>
+              {movies.map((movie) => {
+                return <Movie key={movie.id} movie={movie} />
+              })}
+            </div>
           </section>
           <div className={styles.btnContainer}>
             <button
