@@ -2,7 +2,7 @@
   width: max-content;
   font-family: 'Poppins';
   font-weight: 700;
-  margin: 30px auto;
+  margin: 0 auto 20px;
 }
 
 .footer span {
@@ -11,5 +11,5 @@
 
 .footer p {
   width: max-content;
-  margin: 5px auto;
+  margin: 0px auto;
 }

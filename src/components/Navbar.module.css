@@ -36,7 +36,7 @@
   font-size: 18px;
   font-family: 'Montserrat';
   font-weight: bold;
-  padding: 5px 0;
+  padding: 1px 0;
   color: var(--white);
   border-bottom: 3px solid transparent;
   text-decoration: none;
@@ -47,7 +47,7 @@
 .subMenu .navLinks:hover,
 .subMenu .navLinks.activeLink {
   color: var(--primary);
-  border-bottom: 3px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
 
 .form {
