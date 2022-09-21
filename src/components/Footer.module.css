@@ -13,3 +13,7 @@
   width: max-content;
   margin: 0px auto;
 }
+
+.footer a {
+  color: var(--primary);
+}

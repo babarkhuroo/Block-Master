@@ -6,7 +6,12 @@ function Footer() {
       <p>
         &copy; {new Date().getFullYear()} <span>Sheikh Camel</span>
       </p>
-      <p>All rights reserved.</p>
+      <p>
+        Design inspired by{' '}
+        <a href='https://www.figma.com/file/UQpMsOGaO2Z6tgjaJmScwI/Block_Master'>
+          Cristopher
+        </a>
+      </p>
     </footer>
   )
 }

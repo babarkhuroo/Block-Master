@@ -40,11 +40,12 @@
 }
 
 .rating .star {
-  transform: scale(0.7);
+  transform: scale(0.8);
 }
 
 .rating .vote {
-  font-size: 1.1em;
+  font-size: 1.3em;
   font-family: 'Montserrat';
   font-weight: 700;
+  padding-left: 2px;
 }
