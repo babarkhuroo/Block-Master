@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './Slider.module.css'
-import { useAppContext } from '../setup/app_context'
-import { large_img } from '../utilities/constants'
-
 import play from '../assets/imgs/play.svg'
 import add from '../assets/imgs/add.svg'
+
+import { large_img } from '../utilities/constants'
+import { useAppContext } from '../setup/app_context'
 
 const Slider = () => {
   const [index, setIndex] = useState(0)

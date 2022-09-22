@@ -1,9 +1,9 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Movie.module.css'
 import Star from '../assets/imgs/star.svg'
-import { useAppContext } from '../setup/app_context'
+
 import { default_img, medium_img } from '../utilities/constants'
+import { useAppContext } from '../setup/app_context'
 
 const Movie = ({ movie }) => {
   const { id, title, vote_average, poster_path, release_date } = movie

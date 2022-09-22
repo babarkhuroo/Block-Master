@@ -16,12 +16,13 @@ import {
 const AppContext = React.createContext()
 
 const initialState = {
-  movies_loading: false,
-  movies_error: false,
   slider_movies: [],
   movies: [],
+  movies_loading: false,
+  movies_error: false,
   single_movie: [],
   single_movie_loading: false,
+  single_movie_error: false,
 }
 
 const AppProvider = ({ children }) => {
@@ -32,7 +33,8 @@ const AppProvider = ({ children }) => {
   const getSliders = async (TRENDING) => {
     dispatch({ type: GET_SLIDERS_BEGIN })
     try {
-      const data = await fetch(TRENDING).then((res) => res.json())
+      const res = await fetch(TRENDING)
+      const data = await res.json()
       const trend = data.results.slice(0, 6)
       dispatch({ type: GET_SLIDERS_SUCCESS, payload: { trend } })
     } catch (error) {
@@ -44,12 +46,10 @@ const AppProvider = ({ children }) => {
   const getMovies = async (url) => {
     dispatch({ type: GET_MOVIES_BEGIN })
     try {
-      const data = await fetch(url).then((res) => res.json())
+      const res = await fetch(url)
+      const data = await res.json()
       const movies = data.results
-      dispatch({
-        type: GET_MOVIES_SUCCESS,
-        payload: { movies },
-      })
+      dispatch({ type: GET_MOVIES_SUCCESS, payload: { movies } })
     } catch (error) {
       dispatch({ type: GET_MOVIES_ERROR })
       console.log(error)
@@ -59,13 +59,13 @@ const AppProvider = ({ children }) => {
   const getSingleMovie = async (id) => {
     dispatch({ type: GET_SINGLE_MOVIE_BEGIN })
     try {
-      const data = await fetch(`${base_url}movie/${id}?${api_key}`).then(
-        (res) => res.json()
-      )
-      dispatch({
-        type: GET_SINGLE_MOVIE_SUCCESS,
-        payload: { data },
-      })
+      const res = await fetch(`${base_url}movie/${id}?${api_key}`)
+      const data = await res.json()
+      if (data.status_code === 34) {
+        dispatch({ type: GET_SINGLE_MOVIE_ERROR })
+      } else {
+        dispatch({ type: GET_SINGLE_MOVIE_SUCCESS, payload: { data } })
+      }
     } catch (error) {
       dispatch({ type: GET_SINGLE_MOVIE_ERROR })
       console.log(error)

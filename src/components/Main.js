@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import styles from './Main.module.css'
 import Slider from './Slider'
 import Movie from './Movie'
 import Loading from './Loading'
+
 import not_found from '../assets/imgs/not_found.svg'
-import { SEARCH as search_url } from '../utilities/constants'
+import { links } from '../utilities/constants'
+
 import { useAppContext } from '../setup/app_context'
 
 const Main = ({ url }) => {
@@ -15,42 +17,46 @@ const Main = ({ url }) => {
     getMovies,
     setQuery,
   } = useAppContext()
-
-  const [page, setPage] = useState(1)
   const { query } = useParams()
+  const [page, setPage] = useState(1)
 
   function prevPage() {
     if (page <= 1) {
       setPage(1)
     } else {
-      setPage((page) => page - 1)
+      setPage((curr) => curr - 1)
     }
   }
 
   function nextPage() {
-    setPage((page) => page + 1)
+    setPage((curr) => curr + 1)
+  }
+
+  function keyToTitle() {
+    const key = Object.entries(links).find((el) => el[1] == url)[0]
+    const string = key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()
+    const finalString = string
+      .split('_')
+      .map((el) => el.charAt(0).toUpperCase() + el.slice(1))
+      .join(' ')
+    if (finalString === 'Search') {
+      const searchString = `${finalString} results for "${query}"`
+      return searchString
+    }
+    return finalString
   }
 
   useEffect(() => {
-    if (url) {
-      setPage(1)
-      setQuery('')
-      getMovies(query ? search_url + query + '&page=' + page : url + page)
-    }
+    setQuery('')
   }, [url])
 
   useEffect(() => {
-    if (query) {
-      setPage(1)
-      getMovies(query ? search_url + query + '&page=' + page : url + page)
-    }
-  }, [query])
+    setPage(1)
+  }, [url, query])
 
   useEffect(() => {
-    if (page >= 1) {
-      getMovies(query ? search_url + query + '&page=' + page : url + page)
-    }
-  }, [page])
+    getMovies(query ? links.SEARCH + query + '&page=' + page : url + page)
+  }, [url, query, page])
 
   return (
     <>
@@ -61,7 +67,7 @@ const Main = ({ url }) => {
         <>
           <section className={styles.container}>
             <div className={styles.titleContainer}>
-              <h2 className={styles.pageTitle}>Popular Movies</h2>
+              <h2 className={styles.pageTitle}>{keyToTitle()}</h2>
               <div className={styles.line}></div>
               <h3 className={styles.pageNumber}>Page {page}</h3>
             </div>

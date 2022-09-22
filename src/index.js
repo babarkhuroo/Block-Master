@@ -3,14 +3,18 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+
 import { AppProvider } from './setup/app_context'
+import Layout from './layout/Layout'
 
 const container = document.getElementById('root')
 const root = createRoot(container)
 root.render(
   <React.StrictMode>
     <AppProvider>
-      <App />
+      <Layout>
+        <App />
+      </Layout>
     </AppProvider>
   </React.StrictMode>
 )
