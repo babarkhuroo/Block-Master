@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react'
-import '../styles/SingleMovie.css'
-import { useAppContext } from '../app_context'
+import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import styles from './SingleMovie.module.css'
 import Loading from './Loading'
-import { medium_img } from '../constants'
+import Error from './Error'
+
+import { default_img, medium_img } from '../utilities/constants'
+import { useAppContext } from '../setup/app_context'
 
 function SingleMovie() {
   const {
-    clickedId: id,
     getSingleMovie,
     single_movie: movie,
     single_movie_loading,
+    single_movie_error,
   } = useAppContext()
+  const { id } = useParams()
   const { title, overview, poster_path, release_date, genres, runtime } = movie
 
   useEffect(() => {
@@ -22,31 +26,41 @@ function SingleMovie() {
   }
 
   return (
-    <div className='movie-details'>
-      <div className='poster'>
-        <img src={medium_img + poster_path} alt='poster' />
-      </div>
-      <div className='details'>
-        <h1>{title}</h1>
-        <p>{overview}</p>
-        <div className='others'>
-          <p className='release-date'>
-            Release Date : <span>{release_date}</span>
-          </p>
-          <p className='genres'>
-            Tags :{' '}
-            {genres?.map((genre, index) => (
-              <span key={index} className='genre'>
-                {genre.name}
-              </span>
-            ))}
-          </p>
-          <p className='runtime'>
-            Runtime : <span>{runtime} mins</span>
-          </p>
-        </div>
-      </div>
-    </div>
+    <>
+      {single_movie_error ? (
+        <Error />
+      ) : (
+        <section className={styles.movieDetails}>
+          <div className={styles.posterContainer}>
+            <img
+              src={poster_path ? medium_img + poster_path : default_img}
+              alt='poster'
+              className={styles.poster}
+            />
+          </div>
+          <div className={styles.details}>
+            <h1 className={styles.title}>{`${title} (${
+              release_date ? release_date.slice(0, 4) : 'N/A'
+            })`}</h1>
+            <p className={styles.overview}>{overview}</p>
+            <div className={styles.others}>
+              <p className={styles.releaseDate}>
+                Release Date : <span>{release_date}</span>
+              </p>
+              <p className={styles.genres}>
+                Tags :{' '}
+                {genres?.map((genre, index) => (
+                  <span key={index}>{genre.name}</span>
+                ))}
+              </p>
+              <p className={styles.runtime}>
+                Runtime : <span>{runtime} mins</span>
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+    </>
   )
 }
 

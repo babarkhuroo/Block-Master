@@ -1,0 +1,52 @@
+.movieContainer {
+  width: 226px;
+  text-decoration: none;
+  font-family: 'Poppins';
+  color: white;
+  background-color: var(--black);
+  border-radius: 10px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.movieContainer:hover {
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 14px 28px,
+    rgba(255, 255, 255, 0.22) 0px 10px 10px;
+}
+
+.movieContainer .poster {
+  height: 339px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.movieContainer h4 {
+  font-size: 20px;
+  margin: 0 0.5em 0.5em;
+}
+
+.rating {
+  position: absolute;
+  top: 30px;
+  left: -4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 3px 7px 3px 0px;
+  border: 3px solid var(--primary);
+  border-radius: 0 500px 500px 0;
+}
+
+.rating .star {
+  transform: scale(0.8);
+}
+
+.rating .vote {
+  font-size: 1.3em;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  padding-left: 2px;
+}

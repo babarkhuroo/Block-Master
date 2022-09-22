@@ -1,47 +1,42 @@
 .nav {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  gap: 3rem;
-  padding: 2rem;
+  margin: 32px 0;
 }
 
-.nav .logo {
+.logo {
   position: relative;
+  margin: 0 32px;
 }
 
-.nav .logo .bg-title {
+.logo h2 {
   position: absolute;
   left: 14px;
-  right: 11px;
-  top: 14px;
-  bottom: 21px;
-  background: #0e3fa9;
-  transform: rotate(-10deg);
-}
-
-.nav .logo h2 {
+  top: 23px;
   font-size: 12px;
   font-family: 'Poppins';
   color: #ffa903;
+  background: #0e3fa9;
+  padding: 0 2px;
   transform: rotate(-10deg);
-  position: absolute;
-  top: 12px;
-  left: 16px;
   z-index: 5;
 }
 
-.nav .sub-menu {
+.subMenu {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
 }
 
-.nav .sub-menu a {
+.subMenu li {
+  list-style-type: none;
+  padding: 0 12px;
+}
+
+.subMenu .navLinks {
+  font-size: 18px;
   font-family: 'Montserrat';
-  font-size: 1.1rem;
   font-weight: bold;
-  padding: 0.3rem 0;
+  padding: 1px 0;
   color: var(--white);
   border-bottom: 3px solid transparent;
   text-decoration: none;
@@ -49,61 +44,57 @@
   transition: color 0.3s ease, border-bottom 0.2s ease;
 }
 
-.nav .sub-menu a:hover,
-.nav .sub-menu a.active-link {
+.subMenu .navLinks:hover,
+.subMenu .navLinks.activeLink {
   color: var(--primary);
-  border-bottom: 3px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
 
-.nav .form {
+.form {
+  width: 400px;
   display: flex;
   align-items: center;
   margin-left: auto;
-  width: 350px;
+  padding: 0 32px;
 }
 
-.nav .form input {
-  font-family: 'Montserrat';
-  font-size: 16px;
-  padding: 10px;
+.form .searchField {
   height: 44px;
   width: 100%;
   min-width: 145px;
+  font-size: 16px;
+  font-family: 'Montserrat';
+  padding: 10px;
   border: 1px solid var(--primary);
   border-radius: 8px 0 0 8px;
 }
 
-.nav .form input::placeholder {
+.form .searchField::placeholder {
   color: var(--grey);
 }
 
-.nav .form input:focus {
+.form .searchField:focus {
   outline: none;
-  color: var(--black);
 }
 
-.nav .form .btn {
+.form .btn {
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--primary);
-  height: 44px;
   border: none;
   border-radius: 0 4px 4px 0;
   padding: 10px 24px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-.nav .form .link {
-  line-height: 0;
-}
-
-.nav .form .btn:hover {
+.form .btn:hover {
   background-color: rgba(254, 217, 65, 0.9);
 }
 
-.nav .form .btn img {
+.form .btn img {
   height: 20px;
   width: 20px;
 }
@@ -114,17 +105,17 @@
     gap: 0;
     font-size: 14px;
   }
-  .nav .form {
+  .form {
     margin: 0;
   }
-  .nav .form input,
-  .nav .form .btn {
+  .form .searchField,
+  .form .btn {
     height: 35px;
   }
-  .nav .form .btn {
+  .form .btn {
     padding: 8px 18px;
   }
-  .nav .form .btn img {
+  .form .btn img {
     height: 18px;
     width: 18px;
   }

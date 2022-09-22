@@ -1,36 +1,43 @@
-.slider-container {
-  padding-bottom: 30%;
-  margin: 0 10px 50px;
+.sliderContainer {
+  height: 300px;
+  max-width: 100%;
   border-radius: 10px;
+  margin: 0 10px;
   position: relative;
   overflow: hidden;
 }
 
-.slider-container .banner {
-  height: inherit;
+.banner {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 1s ease;
+  overflow: hidden;
+}
+
+.banner .sliderImage {
+  height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  left: 0;
-  opacity: 0;
-  transition: all 1s ease;
 }
 
-.slider-container .btn-container {
+.btnContainer {
   position: absolute;
-  left: 0px;
-  bottom: 0px;
+  left: 2em;
+  bottom: 2em;
   display: flex;
   gap: 1em;
-  margin: 2em;
 }
 
-.btn-container .slider-btn {
-  background-color: var(--primary);
+.btnContainer .sliderBtn {
   color: var(--black);
+  background-color: var(--primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,21 +48,20 @@
   cursor: pointer;
 }
 
-.btn-container .slider-btn img {
+.btnContainer .sliderBtn img {
   height: 18px;
 }
 
-.btn-container .slider-btn a {
+.btnContainer .sliderBtn a {
   color: var(--black);
-  background-color: var(--primary);
   font-family: 'Montserrat';
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-.btn-container .later,
-.btn-container .later a {
+.btnContainer .later,
+.btnContainer .later a {
   color: var(--primary);
   background-color: var(--black);
 }
@@ -76,42 +82,41 @@
 }
 
 @media screen and (max-width: 768px) {
-  .slider-container {
+  .sliderContainer {
     padding-bottom: 50%;
   }
-  .slider-container .btn-container {
+  .sliderContainer .btnContainer {
     gap: 2em;
   }
-  .btn-container .slider-btn {
+  .btnContainer .sliderBtn {
     padding: 0.3em 1em;
   }
-  .btn-container .slider-btn img {
+  .btnContainer .sliderBtn img {
     width: 8px;
     margin-right: 10px;
   }
-  .btn-container a {
+  .btnContainer a {
     font-size: 12px;
   }
 }
 
 /* indicators */
 
-.ind-container {
-  background-color: rgba(211, 211, 211, 0.15);
+.indContainer {
   width: max-content;
-  margin: 0 auto;
-  border-radius: 500px;
-  padding: 0 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-30px);
+  background-color: rgba(211, 211, 211, 0.15);
+  border-radius: 500px;
+  padding: 0 5px;
+  margin: 15px auto 30px;
 }
 
 .indicator {
-  background-color: var(--grey);
   width: 7px;
   height: 7px;
+  background-color: var(--grey);
   border-radius: 50%;
   margin: 3px;
   transition: all 0.4s ease;
@@ -123,7 +128,7 @@
 }
 
 .indicator.active {
+  width: 15px;
   background-color: var(--white);
   border-radius: 500px;
-  width: 12px;
 }
