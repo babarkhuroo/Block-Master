@@ -1,6 +1,6 @@
 # Block Master
 
-![screenshot](./src/assets/imgs/banner.png)
+![screenshot](./src/assets/imgs/thumbnail.png)
 
 ## About
 
@@ -9,8 +9,8 @@ This project is a replacement for IMDb website. Yes, you heard it right. This is
 ## Technologies Used
 
 - Reactjs
-- JavaScript
 - React Router
+- JavaScript
 - TMDB API
 
 ## Features
