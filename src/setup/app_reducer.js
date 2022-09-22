@@ -14,6 +14,7 @@ const app_reducer = (state, action) => {
   if (action.type === GET_SLIDERS_BEGIN) {
     return { ...state, movies_loading: true }
   }
+
   if (action.type === GET_SLIDERS_SUCCESS) {
     return {
       ...state,
@@ -21,12 +22,15 @@ const app_reducer = (state, action) => {
       slider_movies: action.payload.trend,
     }
   }
+
   if (action.type === GET_SLIDERS_ERROR) {
     return { ...state, movies_loading: false, movies_error: true }
   }
+
   if (action.type === GET_MOVIES_BEGIN) {
     return { ...state, movies_loading: true }
   }
+
   if (action.type === GET_MOVIES_SUCCESS) {
     return {
       ...state,
@@ -34,21 +38,25 @@ const app_reducer = (state, action) => {
       movies: action.payload.movies,
     }
   }
+
   if (action.type === GET_MOVIES_ERROR) {
     return { ...state, movies_loading: false, movies_error: true }
   }
+
   if (action.type === GET_SINGLE_MOVIE_BEGIN) {
     return { ...state, single_movie_loading: true }
   }
+
   if (action.type === GET_SINGLE_MOVIE_SUCCESS) {
     return {
       ...state,
-      single_movie: action.payload.data,
       single_movie_loading: false,
+      single_movie: action.payload.data,
     }
   }
+
   if (action.type === GET_SINGLE_MOVIE_ERROR) {
-    return { ...state, single_movie_loading: false }
+    return { ...state, single_movie_loading: false, single_movie_error: true }
   }
 
   throw new Error(`No matching "${action.type}" - action type`)

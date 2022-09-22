@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import '../styles/Navbar.css'
-import { useAppContext } from '../app_context'
+import styles from './Navbar.module.css'
+import { useAppContext } from '../setup/app_context'
 
 import logo from '../assets/imgs/logo-blockBuster.svg'
 import search_icon from '../assets/imgs/search-icon.svg'
@@ -15,46 +15,61 @@ const Navbar = () => {
     e.preventDefault()
     if (queryRef.current.value) {
       setQuery(queryRef.current.value)
-      navigate(`/search_term=${queryRef.current.value}`)
+      navigate(`/query=${queryRef.current.value}`)
     }
   }
 
   return (
-    <nav className='nav'>
-      <Link to='/' className='logo'>
-        <img src={logo} alt='blockbuster' />
-        <div className='bg-title'></div>
+    <nav className={styles.nav}>
+      <Link to='/' className={styles.logo}>
+        <img src={logo} alt='blockmaster' />
         <h2>Block Master</h2>
       </Link>
-      <div className='sub-menu'>
-        <NavLink
-          className={({ isActive }) => (isActive ? 'active-link' : null)}
-          to='/now_playing'
-        >
-          Now Playing
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? 'active-link' : null)}
-          to='/upcoming'
-        >
-          Upcoming
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? 'active-link' : null)}
-          to='/top_rated'
-        >
-          Top Rated
-        </NavLink>
-      </div>
-      <form className='form' onSubmit={handleSubmit}>
+      <ul className={styles.subMenu}>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? `${styles.activeLink} ${styles.navLinks}`
+                : styles.navLinks
+            }
+            to='/now_playing'>
+            Now Playing
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? `${styles.activeLink} ${styles.navLinks}`
+                : styles.navLinks
+            }
+            to='/upcoming'>
+            Upcoming
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? `${styles.activeLink} ${styles.navLinks}`
+                : styles.navLinks
+            }
+            to='/top_rated'>
+            Top Rated
+          </NavLink>
+        </li>
+      </ul>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <input
+          className={styles.searchField}
           ref={queryRef}
           type='search'
           name='search'
           id='search'
           placeholder='Search here...'
         />
-        <button type='submit' className='btn'>
+        <button type='submit' className={styles.btn}>
           <img src={search_icon} alt='search icon' />
         </button>
       </form>

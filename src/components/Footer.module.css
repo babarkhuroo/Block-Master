@@ -1,17 +1,19 @@
 .footer {
-  height: 50px;
   width: max-content;
-  padding: 1rem;
-  margin: 0 auto;
   font-family: 'Poppins';
   font-weight: 700;
+  margin: 20px auto;
 }
 
 .footer span {
   color: var(--primary);
 }
 
-p {
+.footer p {
   width: max-content;
-  margin: 5px auto;
+  margin: 0px auto;
+}
+
+.footer a {
+  color: var(--primary);
 }

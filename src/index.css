@@ -1,18 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@500;700&family=Montserrat:wght@400;500;700;800&display=swap');
+
+:root {
+  --black: #000;
+  --background: #0f0e17;
+  --primary: #fed941;
+  --grey: #a7a9be;
+  --white: #fffffe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  color: var(--white);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   body {
     display: none;
   }
@@ -33,4 +40,4 @@ code {
     top: 50%;
     transform: translateX(-50%);
   }
-}
+} */
