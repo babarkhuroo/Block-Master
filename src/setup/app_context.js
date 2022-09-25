@@ -92,10 +92,10 @@ const AppProvider = ({ children }) => {
         query,
         setQuery,
         clickedId,
+        setClickedId,
         isSidebarOpen,
         toggleSidebar,
         closeSidebar,
-        setClickedId,
         getMovies,
         getSingleMovie,
       }}>

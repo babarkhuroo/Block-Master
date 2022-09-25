@@ -67,3 +67,23 @@
   text-align: center;
   margin: 20px auto;
 }
+
+/* ===================== */
+/* for upto small screns */
+/* ===================== */
+
+@media (max-width: 640px) {
+  .titleContainer {
+    margin: 0 10px;
+  }
+  .pageTitle {
+    font-size: 24px;
+  }
+  .pageNumber {
+    font-size: 16px;
+  }
+  .movieContainer {
+    justify-content: space-evenly;
+    gap: 20px 0px;
+  }
+}
