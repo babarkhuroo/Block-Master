@@ -61,9 +61,37 @@
 }
 
 .noResults {
-  font-size: 1.5em;
+  font-size: 24px;
   font-family: 'Montserrat';
   font-weight: 600;
   text-align: center;
   margin: 20px auto;
+}
+
+/* ===================== */
+/* for upto small screns */
+/* ===================== */
+
+@media (max-width: 640px) {
+  .titleContainer {
+    margin: 0 10px;
+  }
+  .pageTitle {
+    font-size: 24px;
+  }
+  .pageNumber {
+    font-size: 16px;
+  }
+  .movieContainer {
+    justify-content: space-evenly;
+    gap: 20px 10px;
+    margin: 0 10px;
+  }
+  .noResults {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  .noResults img {
+    width: 90%;
+  }
 }

@@ -8,7 +8,38 @@ import { useAppContext } from '../setup/app_context'
 
 const Slider = () => {
   const [index, setIndex] = useState(0)
+  const [touchPosition, setTouchPosition] = useState(null)
   const { slider_movies: sliders } = useAppContext()
+
+  const handleTouchStart = (e) => {
+    const touchDown = e.touches[0].clientX
+    setTouchPosition(touchDown)
+  }
+
+  const handleTouchMove = (e) => {
+    const touchDown = touchPosition
+
+    if (touchDown === null) {
+      return
+    }
+
+    const currentTouch = e.touches[0].clientX
+    const diff = touchDown - currentTouch
+
+    if (diff > 5) {
+      setIndex((prevIndex) =>
+        prevIndex === sliders.length - 1 ? 0 : prevIndex + 1
+      )
+    }
+
+    if (diff < -5) {
+      setIndex((prevIndex) =>
+        prevIndex === sliders.length - 1 ? 0 : prevIndex - 1
+      )
+    }
+
+    setTouchPosition(null)
+  }
 
   useEffect(() => {
     let slideFunc = setInterval(() => {
@@ -40,7 +71,11 @@ const Slider = () => {
             position = 'prevSlide'
           }
           return (
-            <div key={idx} className={`${styles.banner} ${styles[position]}`}>
+            <div
+              key={idx}
+              className={`${styles.banner} ${styles[position]}`}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}>
               <img
                 src={large_img + backdrop_path}
                 alt={title}

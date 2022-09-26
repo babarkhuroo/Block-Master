@@ -18,26 +18,3 @@ body {
   background-color: var(--background);
   color: var(--white);
 }
-
-@media screen and (max-width: 920px) {
-  body {
-    display: none;
-  }
-  html {
-    background-color: #303030;
-    height: 80vh;
-    position: relative;
-  }
-  html::before {
-    content: 'This website is not designed for smaller screens';
-    color: #fff;
-    font-family: 'Poppins';
-    font-weight: 700;
-    width: 90vw;
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%);
-  }
-}

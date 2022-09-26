@@ -11,3 +11,13 @@
   display: block;
   margin-top: 20px;
 }
+
+/* ===================== */
+/* for upto small screns */
+/* ===================== */
+
+@media (max-width: 640px) {
+  .errorContainer {
+    font-size: 26px;
+  }
+}

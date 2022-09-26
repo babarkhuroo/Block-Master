@@ -29,6 +29,15 @@ const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const [query, setQuery] = useState('')
   const [clickedId, setClickedId] = useState(0)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
+  }
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false)
+  }
 
   const getSliders = async (TRENDING) => {
     dispatch({ type: GET_SLIDERS_BEGIN })
@@ -84,6 +93,9 @@ const AppProvider = ({ children }) => {
         setQuery,
         clickedId,
         setClickedId,
+        isSidebarOpen,
+        toggleSidebar,
+        closeSidebar,
         getMovies,
         getSingleMovie,
       }}>
