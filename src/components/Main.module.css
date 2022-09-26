@@ -89,6 +89,7 @@
   }
   .noResults {
     font-size: 16px;
+    padding: 0 10px;
   }
   .noResults img {
     width: 90%;
