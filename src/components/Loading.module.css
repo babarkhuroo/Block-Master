@@ -12,3 +12,13 @@
   display: block;
   margin-top: 10px;
 }
+
+/* ===================== */
+/* for upto small screns */
+/* ===================== */
+
+@media (max-width: 640px) {
+  .loading {
+    font-size: 26px;
+  }
+}

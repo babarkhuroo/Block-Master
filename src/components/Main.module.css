@@ -61,7 +61,7 @@
 }
 
 .noResults {
-  font-size: 1.5em;
+  font-size: 24px;
   font-family: 'Montserrat';
   font-weight: 600;
   text-align: center;
@@ -84,6 +84,13 @@
   }
   .movieContainer {
     justify-content: space-evenly;
-    gap: 20px 0px;
+    gap: 20px 10px;
+    margin: 0 10px;
+  }
+  .noResults {
+    font-size: 16px;
+  }
+  .noResults img {
+    width: 90%;
   }
 }

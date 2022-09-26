@@ -17,3 +17,13 @@
 .footer a {
   color: var(--primary);
 }
+
+/* ===================== */
+/* for upto small screns */
+/* ===================== */
+
+@media (max-width: 640px) {
+  .footer {
+    font-size: 14px;
+  }
+}
