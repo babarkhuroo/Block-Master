@@ -110,14 +110,14 @@
   width: 20px;
 }
 
-/* ===================== */
-/* for upto small screns */
-/* ===================== */
+/* ====================== */
+/* for upto small screens */
+/* ====================== */
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .nav {
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     margin: 0;
     padding: 10px;
   }
@@ -173,5 +173,32 @@
   }
   .open .bottom {
     transform: rotate(-45deg) translateY(6px) translate(-6px);
+  }
+}
+
+/* =========================== */
+/* from small-to-medium screens */
+/* =========================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav {
+    margin: 20px 0;
+    padding: 0;
+  }
+  .logo {
+    margin: 0 16px;
+    transform: scale(0.9);
+  }
+  .subMenu li {
+    padding: 0 10px;
+  }
+  .subMenu .navLinks {
+    font-size: 16px;
+  }
+  .form {
+    padding: 0 32px 0 16px;
+  }
+  .form .searchField {
+    min-width: 145px;
   }
 }

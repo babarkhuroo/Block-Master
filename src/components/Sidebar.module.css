@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .sidebar {
     display: block;
     width: 100%;
@@ -14,7 +14,7 @@
   }
   .sidebar.showSidebar {
     background-color: var(--background);
-    transform: translateY(0px);
+    transform: translateY(-1px);
     z-index: 8;
   }
   .subMenu {
