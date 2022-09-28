@@ -12,9 +12,9 @@
   margin-top: 20px;
 }
 
-/* ===================== */
-/* for upto small screns */
-/* ===================== */
+/* ====================== */
+/* for upto small screens */
+/* ====================== */
 
 @media (max-width: 640px) {
   .errorContainer {

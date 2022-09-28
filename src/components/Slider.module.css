@@ -114,11 +114,11 @@
   border-radius: 500px;
 }
 
-/* ===================== */
-/* for upto small screns */
-/* ===================== */
+/* ====================== */
+/* for upto small screens */
+/* ====================== */
 
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .sliderContainer {
     height: 200px;
   }
@@ -140,5 +140,26 @@
   .indContainer {
     margin: 10px auto 15px;
     transform: scale(0.9);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .sliderContainer {
+    height: 200px;
+  }
+  .sliderContainer .btnContainer {
+    left: 1em;
+    bottom: 1em;
+  }
+  .btnContainer .sliderBtn {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+  .btnContainer .sliderBtn img {
+    height: 12px;
+  }
+  .btnContainer .sliderBtn a {
+    display: block;
+    font-size: 14px;
   }
 }
