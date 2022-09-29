@@ -4,7 +4,6 @@ import styles from './Navbar.module.css'
 import Sidebar from './Sidebar'
 import { useAppContext } from '../setup/app_context'
 
-import logo from '../assets/imgs/logo-blockBuster.svg'
 import search_icon from '../assets/imgs/search-icon.svg'
 
 const Navbar = () => {
@@ -24,7 +23,6 @@ const Navbar = () => {
     <header className={styles.navContainer}>
       <nav className={styles.nav}>
         <Link to='/' className={styles.logo}>
-          <img src={logo} alt='blockmaster' />
           <h2>Block Master</h2>
         </Link>
         <button

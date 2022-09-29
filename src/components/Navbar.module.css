@@ -12,21 +12,15 @@
 }
 
 .logo {
-  position: relative;
   margin: 0 32px;
+  text-decoration: none;
 }
 
 .logo h2 {
-  position: absolute;
-  left: 14px;
-  top: 23px;
-  font-size: 12px;
-  font-family: 'Poppins';
-  color: #ffa903;
-  background: #0e3fa9;
-  padding: 0 2px;
-  transform: rotate(-10deg);
-  z-index: 5;
+  font-size: 28px;
+  font-family: 'Permanent Marker';
+  color: white;
+  white-space: nowrap;
 }
 
 .hamIcon {
@@ -123,7 +117,10 @@
   }
   .logo {
     margin: 0;
-    transform: scale(0.9);
+  }
+  .logo h2 {
+    font-size: 22px;
+    margin: 0 10px;
   }
   .subMenu,
   .form {
@@ -187,7 +184,9 @@
   }
   .logo {
     margin: 0 16px;
-    transform: scale(0.9);
+  }
+  .logo h2 {
+    font-size: 22px;
   }
   .subMenu li {
     padding: 0 10px;
@@ -196,9 +195,16 @@
     font-size: 16px;
   }
   .form {
-    padding: 0 32px 0 16px;
+    padding: 0 16px;
   }
   .form .searchField {
-    min-width: 145px;
+    height: 40px;
+    min-width: 125px;
+    font-size: 14px;
+    padding: 7px;
+  }
+  .form .btn {
+    height: 40px;
+    padding: 7px 18px;
   }
 }
