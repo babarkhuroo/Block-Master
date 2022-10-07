@@ -40,12 +40,13 @@ function SingleMovie() {
           </div>
           <div className={styles.details}>
             <h1 className={styles.title}>{`${title} (${
-              release_date ? release_date.slice(0, 4) : 'N/A'
+              release_date ? new Date(release_date).getFullYear() : 'N/A'
             })`}</h1>
             <p className={styles.overview}>{overview}</p>
             <div className={styles.others}>
               <p className={styles.releaseDate}>
-                Release Date : <span>{release_date}</span>
+                Release Date :{' '}
+                <span>{new Date(release_date).toDateString()}</span>
               </p>
               <p className={styles.genres}>
                 Tags :{' '}
@@ -54,7 +55,8 @@ function SingleMovie() {
                 ))}
               </p>
               <p className={styles.runtime}>
-                Runtime : <span>{runtime} mins</span>
+                Runtime :{' '}
+                <span>{`${Math.floor(runtime / 60)}h ${runtime % 60}m`}</span>
               </p>
             </div>
           </div>

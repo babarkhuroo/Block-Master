@@ -20,7 +20,9 @@ const Movie = ({ movie }) => {
         alt={title}
         className={styles.poster}
       />
-      <h4>{`${title} (${release_date ? release_date.slice(0, 4) : 'N/A'})`}</h4>
+      <h4>{`${title} (${
+        release_date ? new Date(release_date).getFullYear() : 'N/A'
+      })`}</h4>
       <div className={styles.rating}>
         <img src={Star} alt='star' className={styles.star} />
         <span className={styles.vote}>{vote_average}</span>
