@@ -13,14 +13,11 @@
 
 .logo {
   margin: 0 32px;
-  text-decoration: none;
 }
 
-.logo h2 {
-  font-size: 28px;
-  font-family: 'Permanent Marker';
-  color: white;
-  white-space: nowrap;
+.logo,
+.logo img {
+  height: 40px;
 }
 
 .hamIcon {
@@ -116,11 +113,11 @@
     padding: 10px;
   }
   .logo {
-    margin: 0;
-  }
-  .logo h2 {
-    font-size: 22px;
     margin: 0 10px;
+  }
+  .logo,
+  .logo img {
+    height: 35px;
   }
   .subMenu,
   .form {
@@ -184,9 +181,6 @@
   }
   .logo {
     margin: 0 16px;
-  }
-  .logo h2 {
-    font-size: 22px;
   }
   .subMenu li {
     padding: 0 10px;
