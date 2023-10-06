@@ -7,8 +7,7 @@ import reportWebVitals from './reportWebVitals'
 import { AppProvider } from './setup/app_context'
 import Layout from './layout/Layout'
 
-const container = document.getElementById('root')
-const root = createRoot(container)
+const root = createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <AppProvider>
