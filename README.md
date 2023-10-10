@@ -1,6 +1,6 @@
 # Block Master
 
-![screenshot](./src/assets/imgs/thumbnail.png)
+![screenshot](./src/assets/imgs/thumbnail.webp)
 
 ## About
 
