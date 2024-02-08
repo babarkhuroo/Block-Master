@@ -16,7 +16,7 @@ const Navbar = () => {
     e.preventDefault()
     if (queryRef.current.value) {
       setQuery(queryRef.current.value)
-      navigate(`/query=${queryRef.current.value}`)
+      navigate(`/query/${queryRef.current.value}`)
     }
   }
 

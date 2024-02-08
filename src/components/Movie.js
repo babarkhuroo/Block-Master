@@ -25,7 +25,9 @@ const Movie = ({ movie }) => {
       })`}</h4>
       <div className={styles.rating}>
         <img src={Star} alt='star' className={styles.star} />
-        <span className={styles.vote}>{vote_average}</span>
+        <span className={styles.vote}>
+          {Math.round(vote_average * 10) / 10}
+        </span>
       </div>
     </Link>
   )
