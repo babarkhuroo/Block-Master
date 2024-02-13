@@ -1,7 +1,12 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import reportWebVitals from './reportWebVitals'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {
+  createRoutesFromElements,
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from 'react-router-dom'
 
 import './index.css'
 
@@ -13,39 +18,18 @@ import Error from './components/Error'
 import Layout from './layout/Layout'
 import { links } from './utilities/constants'
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <SharedLayout />,
-    errorElement: <Error />,
-    children: [
-      {
-        path: '',
-        element: <Main url={links.POPULAR} />,
-      },
-      {
-        path: 'now_playing',
-        element: <Main url={links.NOW_PLAYING} />,
-      },
-      {
-        path: 'upcoming',
-        element: <Main url={links.UPCOMING} />,
-      },
-      {
-        path: 'top_rated',
-        element: <Main url={links.TOP_RATED} />,
-      },
-      {
-        path: 'query/:query',
-        element: <Main url={links.SEARCH} />,
-      },
-      {
-        path: 'movie/:id',
-        element: <SingleMovie />,
-      },
-    ],
-  },
-])
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<SharedLayout />} errorElement={<Error />}>
+      <Route index element={<Main url={links.POPULAR} />} />
+      <Route path='now_playing' element={<Main url={links.NOW_PLAYING} />} />
+      <Route path='upcoming' element={<Main url={links.UPCOMING} />} />
+      <Route path='top_rated' element={<Main url={links.TOP_RATED} />} />
+      <Route path='query/:query' element={<Main url={links.SEARCH} />} />
+      <Route path='movie/:id' element={<SingleMovie />} />
+    </Route>
+  )
+)
 
 const root = createRoot(document.getElementById('root'))
 root.render(
