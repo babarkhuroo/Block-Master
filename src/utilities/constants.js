@@ -1,6 +1,6 @@
 export const base_url = 'https://api.themoviedb.org/3/'
 export const base_img_url = 'https://image.tmdb.org/t/p'
-export const api_key = `api_key=${process.env.REACT_APP_API_KEY}`
+export const api_key = `api_key=${import.meta.env.VITE_APP_API_KEY}`
 
 export const small_img = `${base_img_url}/w185`
 export const medium_img = `${base_img_url}/w342`
